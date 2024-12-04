@@ -4,6 +4,9 @@
   box-sizing: border-box;
  
 }
+.page{
+  padding: 20px 40px;
+}
 
 .navbar{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -101,4 +104,75 @@ input::placeholder{
 .size-1{
   font-size: 25px;
   color: #bdb9b9;
+}
+/*  hero section */
+.bg{
+  text-align: center;
+   padding: 120px 100px;
+}
+/*  footer section css */
+.footer {
+  width: 100%;
+  padding: 20px 40px;
+  background-color: #f6eded;
+}
+.para3{
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+.footer-logo{
+  width: 50%;
+  padding: 10px 0px;
+}
+.some-content {
+  padding-top: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.footer-flex {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 100px;
+padding-top: 20px;
+border-top:  1px solid  #ee6464;
+}
+.footer-container-1 {
+  width: 100%
+} 
+.some-content {
+  padding-top: 20px;
+  cursor: pointer;
+}
+.footer-services {
+  padding-top: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.icons-contact {
+  font-size: 18px;
+}
+.footer-social-icon {
+  width: 30px;
+  cursor: pointer;
+}
+.footer-social-icon:hover {
+  opacity: 0.6;
+  background-color: aliceblue;
+}
+.copyright {
+  text-align: center;
 }

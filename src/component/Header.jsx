@@ -9,7 +9,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Header = () => {
     return (
-        <div className='page'>
+        <div className=''>
             <div className='navbar'>
                 <div className='navbar-container-1'>
                     <h2 className='logo'>Simmu</h2>
