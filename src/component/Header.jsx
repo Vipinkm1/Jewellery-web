@@ -9,19 +9,18 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Header = () => {
     return (
-        
         <div className='page'>
             <div className='navbar'>
                 <div className='navbar-container-1'>
                     <h2 className='logo'>Simmu</h2>
                     <div className='input-element'>
                         <input type='search' className='input-width' placeholder='Search ' />
-                        <CiSearch className='search-icon' />
+                        <CiSearch className='search-icon'/>
                     </div>
                     <div className='nav-item'>
                         <div className='center'>
                             <MdStorefront className='nav-icon-size' />
-                            <p className='para1'>Store</p>
+                            <p className='para1 '>Blog</p>
                         </div>
                         <div className='center'>
                             <VscAccount className='nav-icon-size' />
@@ -33,29 +32,29 @@ const Header = () => {
                         </div>
                         <div className='center'>
                             <BsCart2 className='nav-icon-size' />
-                            <p className='para1'>Store</p>
+                            <p className='para1'>Cart</p>
                         </div>
                     </div>
                 </div>
                 <div className='next-nav'>
                     <div className='flex-1'>
-                        <div className='para1'>Shop by Categories</div>
+                        <div className='para2 line'>Shop by Categories</div>
                         <RiArrowDropDownLine className='size-1' />
                     </div>
                     <div className=''>
-                        <div className='para1'>Men's Jewellery</div>
+                        <div className='para2 line'>Men's Jewellery</div>
                     </div>
                     <div className=''>
-                        <div className='para1'>Women Jewellery</div>
+                        <div className='para2 line'>Women Jewellery</div>
                     </div>
                     <div className=''>
-                        <div className='para1'>Latest Collection</div>
+                        <div className='para2 line'>Latest Collection</div>
                     </div>
                     <div className=''>
-                        <div className='para1'>Gift Stores</div>
+                        <div className='para2 line'>Gift Stores</div>
                     </div>
                     <div className=''>
-                        <div className='para1'>More at Simmu</div>
+                        <div className='para2 line'>More at Simmu</div>
                     </div>
                 </div>
             </div>
