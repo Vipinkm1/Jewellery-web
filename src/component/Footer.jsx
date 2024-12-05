@@ -18,24 +18,24 @@ const Footer = () => {
           </div>
         </div>
         <div className='footer-container-2'>
-        
+
           <h2 className='heading   color font'>Quick Links</h2>
           <div className='some-content'>
-            <div className='footer-services  '>About Us</div>
-            <div className='footer-services  '>Costumer Review</div>
-            <div className='footer-services  '>Blogs</div>
-            <div className='footer-services  '>Join Us</div>
-            <div className='footer-services  '>Contact Us</div>
+            <div className='footer-services line2'>About Us</div>
+            <div className='footer-services line2'>Costumer Review</div>
+            <div className='footer-services line2'>Blogs</div>
+            <div className='footer-services line2'>Join Us</div>
+            <div className='footer-services line2'>Contact Us</div>
           </div>
         </div>
         <div className='footer-container-2'>
           <h2 className='heading color font'>Information</h2>
           <div className='some-content'>
-            <div to='' className='footer-services  '>Shipping & Returns</div>
-            <div to='' className='footer-services  '>Privacy & Policy</div>
-            <div to='' className='footer-services  '>Internation Shipping</div>
-            <div to='' className='footer-services  '>FAQs & Support</div>
-            <div to='' className='footer-services '>Terms & Condition</div>
+            <div to='' className='footer-services line2'>Shipping & Returns</div>
+            <div to='' className='footer-services line2'>Privacy & Policy</div>
+            <div to='' className='footer-services line2'>Internation Shipping</div>
+            <div to='' className='footer-services line2'>FAQs & Support</div>
+            <div to='' className='footer-services line2'>Terms & Condition</div>
           </div>
         </div>
         <div className='footer-container-2'>
@@ -69,9 +69,8 @@ const Footer = () => {
         </div>
       </div>
       {/*  another content */}
+      <h2 className='heading  footer-services copyright'>Copyright 2024 | Simmu ki jewellery , All Right Reserved.</h2>
 
-        <h2 className='heading  footer-services copyright'>Copyright 2024 | Vipin Kumar , All Right Reserved.</h2>
-      
     </div>
   )
 }

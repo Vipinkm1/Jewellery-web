@@ -2,12 +2,10 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
- 
 }
 .page{
   padding: 20px 40px;
 }
-
 .navbar{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   width: 100%;
@@ -153,7 +151,6 @@ border-top:  1px solid  #ee6464;
   color: black;
   cursor: pointer;
 }
-
 .footer-contact {
   display: flex;
   align-items: center;
@@ -161,7 +158,6 @@ border-top:  1px solid  #ee6464;
   gap: 10px;
   padding-top: 10px;
 }
-
 .icons-contact {
   font-size: 18px;
 }
@@ -175,4 +171,8 @@ border-top:  1px solid  #ee6464;
 }
 .copyright {
   text-align: center;
+}
+.line2:hover{
+text-decoration: underline;
+text-decoration-thickness: 1.5px;
 }
