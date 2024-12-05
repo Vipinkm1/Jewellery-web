@@ -22,11 +22,11 @@ const Footer = () => {
 
           <h2 className='heading   color font'>Quick Links</h2>
           <div className='some-content'>
-            <div className='footer-services line2'>About Us</div>
-            <div className='footer-services line2'>Costumer Review</div>
-            <div className='footer-services line2'>Blogs</div>
-            <div className='footer-services line2'>Join Us</div>
+            <Link to='/about-us' className='footer-services line2'>About Us</Link>
+            <Link to='/blogs' className='footer-services line2'>Blogs</Link>
+            <Link to='/join-us' className='footer-services line2'>Join Us</Link>
             <Link to='/contact' className='footer-services line2'>Contact Us</Link>
+            <Link to='/customer-review' className='footer-services line2'>Customer Review</Link>
           </div>
         </div>
         <div className='footer-container-2'>

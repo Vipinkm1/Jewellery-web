@@ -56,10 +56,10 @@ const Contact = () => {
             <div className='mt-2'>
                 <p className='para5'>Follow on Social Media:</p>
                 <div className='footer-flex-3 mt-1'>
-                    <FacebookIcon className='add-icon' />
-                    <InstagramIcon className='add-icon' />
-                    <XIcon className='add-icon'/>
-                    <YouTubeIcon   className='add-icon' />
+                    <FacebookIcon style={{fontSize: '30px'}} className='add-icon' />
+                    <InstagramIcon style={{fontSize: '30px'}} className='add-icon' />
+                    <XIcon style={{fontSize: '30px'}} className='add-icon'/>
+                    <YouTubeIcon style={{fontSize: '30px'}}  className='add-icon' />
                 </div>
             </div>
             <div className='mt-2'>

@@ -5,14 +5,20 @@ import { VscHeart } from "react-icons/vsc";
 import { BsCart2 } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
+    const navigate = useNavigate()
+
+    const handlehome = () => {
+        navigate('/')
+    }
     return (
         <div className=''>
             <div className='navbar'>
                 <div className='navbar-container-1'>
-                    <h2 className='logo'>Simmu</h2>
+                    <h2 onClick={handlehome} className='logo'>Simmu</h2>
                     <div className='input-element'>
                         <input type='search' className='input-width' placeholder='Search ' />
                         <CiSearch className='search-icon'/>

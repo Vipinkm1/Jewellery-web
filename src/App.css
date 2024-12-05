@@ -26,6 +26,7 @@
   font-size: 30px;
   font-style: oblique;
   font-family: 'oswald', 'Times New Roman', Times, serif;
+  cursor: pointer;
 }
 .center{
   text-align: center;
@@ -171,6 +172,9 @@ input::placeholder{
   background-color: #000;
   transition: 0.6s ease-in-out;
   color: #fff;
+}
+.add-icon{
+  cursor: pointer;
 }
 .mt-1{
   margin-top: 10px;
