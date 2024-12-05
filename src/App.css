@@ -4,12 +4,11 @@
   box-sizing: border-box;
 }
 .page{
-  padding: 20px 40px;
+  padding: 60px 40px;
 }
 .navbar{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   width: 100%;
-  
 }
 .navbar-container-1{
   display: flex;
@@ -108,6 +107,77 @@ input::placeholder{
   text-align: center;
    padding: 120px 100px;
 }
+/* contact us */
+
+.contact-us-title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+
+}                                 
+.para-4{
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+}
+.para-3{
+  font-size: 16px;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+  color: #080b5b;
+}
+.para5{
+  font-size: 20px;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+.message-box-text{
+  width: 800px;
+  height: 250px;
+  padding: 10px;
+  border: 1px solid #dad7d7;
+  outline: none;
+}
+.footer-flex-4{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+.footer-flex-3{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+.input-width-1{
+  padding: 10px;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #dad7d7;
+  outline: none;
+}
+.btn-color-gr{
+  background-color: #2341c6;
+  color: #fff;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+  width: 20%;
+}
+.btn-color-gr:hover{
+  background-color: #000;
+  transition: 0.6s ease-in-out;
+  color: #fff;
+}
+.mt-1{
+  margin-top: 10px;
+}
+.mt-2{
+  margin-top: 20px;
+}
 /*  footer section css */
 .footer {
   width: 100%;
@@ -176,3 +246,4 @@ border-top:  1px solid  #ee6464;
 text-decoration: underline;
 text-decoration-thickness: 1.5px;
 }
+

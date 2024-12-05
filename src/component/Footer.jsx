@@ -6,6 +6,7 @@ import Twitter from '../assets/Social/twitter.png'
 import Youtube from '../assets/Social/youtube.png'
 import { MdEmail, MdPhone } from 'react-icons/md'
 import { GrLocation } from "react-icons/gr";
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='footer'>
@@ -25,7 +26,7 @@ const Footer = () => {
             <div className='footer-services line2'>Costumer Review</div>
             <div className='footer-services line2'>Blogs</div>
             <div className='footer-services line2'>Join Us</div>
-            <div className='footer-services line2'>Contact Us</div>
+            <Link to='/contact' className='footer-services line2'>Contact Us</Link>
           </div>
         </div>
         <div className='footer-container-2'>
@@ -70,7 +71,6 @@ const Footer = () => {
       </div>
       {/*  another content */}
       <h2 className='heading  footer-services copyright'>Copyright 2024 | Simmu ki jewellery , All Right Reserved.</h2>
-
     </div>
   )
 }
