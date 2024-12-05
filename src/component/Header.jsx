@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MdStorefront } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { VscHeart } from "react-icons/vsc";
@@ -9,10 +9,19 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
+    const [dropDownVisible, setDropDownVisible] = useState(false)
     const navigate = useNavigate()
-
     const handlehome = () => {
         navigate('/')
+    }
+    const handleOpen = () => {
+        setDropDownVisible(true)
+    }
+    const handleMouseEnter = () => {
+        setDropDownVisible(true)
+    }
+    const handleMouseLeave = () => {
+        setDropDownVisible(false)
     }
     return (
         <div className=''>
@@ -21,7 +30,7 @@ const Header = () => {
                     <h2 onClick={handlehome} className='logo'>Simmu</h2>
                     <div className='input-element'>
                         <input type='search' className='input-width' placeholder='Search ' />
-                        <CiSearch className='search-icon'/>
+                        <CiSearch className='search-icon' />
                     </div>
                     <div className='nav-item'>
                         <div className='center'>
@@ -44,7 +53,21 @@ const Header = () => {
                 </div>
                 <div className='next-nav'>
                     <div className='flex-1'>
-                        <div className='para2 line'>Shop by Categories</div>
+                        <div className='para2 line ' onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter} onClick={handleOpen}>Shop by Categories
+                            <div className='category-border'>
+                                {dropDownVisible && (
+                                    <div className="dropdown-menu">
+                                        <div className="dropdown-item">All Categories</div>
+                                        <div className="dropdown-item ">Earnings</div>
+                                        <div className="dropdown-item">Rings</div>
+                                        <div className="dropdown-item">Neckleces</div>
+                                        <div className="dropdown-item">Chain</div>
+                                        <div className="dropdown-item">Bangles</div>
+                                        <div className="dropdown-item">Toy Rings</div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
                         <RiArrowDropDownLine className='size-1' />
                     </div>
                     <div className=''>

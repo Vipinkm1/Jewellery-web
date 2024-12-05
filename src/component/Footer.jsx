@@ -19,7 +19,6 @@ const Footer = () => {
           </div>
         </div>
         <div className='footer-container-2'>
-
           <h2 className='heading   color font'>Quick Links</h2>
           <div className='some-content'>
             <Link to='/about-us' className='footer-services line2'>About Us</Link>
