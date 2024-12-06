@@ -5,7 +5,7 @@ import { VscHeart } from "react-icons/vsc";
 import { BsCart2 } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
@@ -37,10 +37,10 @@ const Header = () => {
                             <MdStorefront className='nav-icon-size' />
                             <p className='para1 '>Blog</p>
                         </div>
-                        <div className='center'>
+                        <Link to={'/signup'} className='center anchor'>
                             <VscAccount className='nav-icon-size' />
                             <p className='para1'>Account</p>
-                        </div>
+                        </Link>
                         <div className='center'>
                             <VscHeart className='nav-icon-size' />
                             <p className='para1'>Wishlist</p>

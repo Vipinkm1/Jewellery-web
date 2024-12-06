@@ -1,15 +1,19 @@
-import React, { Children } from 'react'
+import React from 'react'
 import Header from './Header';
 import Footer from './Footer';
+import { useLocation } from 'react-router-dom';
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
+  const location = useLocation()
+  const isVisible = ['/signup', '/login']
+  const headerNotVisible = isVisible.includes(location.pathname)
   return (
     <div>
-        <Header/>
-        <main>
-            {children}
-        </main>
-        <Footer/>
+      {!headerNotVisible && <Header />}
+      <main>
+        {children}
+      </main>
+      {!headerNotVisible && <Footer />}
     </div>
   )
 }
