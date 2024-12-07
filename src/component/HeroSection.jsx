@@ -3,9 +3,15 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import banner1 from '../assets/banner/20028.jpg'
+import Rings from '../assets/banner/rings.jpeg'
+import ProductRing from '../assets/Jewellery/jwe.jpg'
 
 
 const HeroSection = () => {
+
+  //  change the image
+
+  //  banner 
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -15,59 +21,140 @@ const HeroSection = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
-}
-const slider2Settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 9,
-  slidesToScroll:1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  arrows: true
-}
+  }
+
+  // categories
+  const slider2Settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 9,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true
+  }
   const banner = [
-    {id: 1, name: banner1},
-    {id: 1, name: banner1},
-    {id: 1, name: banner1},
-    {id: 1, name: banner1}
+    { id: 1, name: 'https://battulaaljewels.com/website/images/product-banner.webp' },
+    { id: 1, name: banner1 },
+    { id: 1, name: 'https://listany-prod.s3.amazonaws.com/images/radhikajeweltech/kikjewelsbanner1920x650traditionalnecklacejewellery_1.png' },
+    { id: 1, name: 'https://subalakshmijewellers.com/wp-content/uploads/2021/08/banner-2-1.jpg' }
+  ]
+  const top = [
+    { id: 1, name: 'ENGAGEMENT RINGS', photo: Rings },
+    { id: 2, name: 'STATEMENT EARINGS', photo: Rings },
+    { id: 3, name: 'BRIDESMAID NECKLACE', photo: Rings },
+    { id: 4, name: 'MODERN MANGALSUTRA', photo: Rings },
+    { id: 5, name: 'CUPPLE BANDS', photo: Rings },
+    { id: 6, name: 'ENGAGEMENT KIDS PARTYBEAR', photo: Rings },
   ]
   const category = [
-    {id: 1, link: 'https://www.giva.co/cdn/shop/collections/pink_necklaces_pend_copy.jpg?v=1733220967', catName: 'Pendants' },
-    {id: 2, link: 'https://www.giva.co/cdn/shop/collections/pink_rings_c356f6b3-6547-4e39-9b08-dfdf5ecfc2b0.jpg?v=1733220955', catName: 'Rings'},
-    {id: 3, link: 'https://www.giva.co/cdn/shop/collections/earrings_pink-min.png?v=1733220945', catName: 'Earings'},
-    {id: 4, link: 'https://www.giva.co/cdn/shop/collections/pink_br-min.png?v=1733220894', catName: 'Bracelets'},
-    {id: 5, link: 'https://www.giva.co/cdn/shop/collections/sets_pink.webp?v=1733220904', catName: 'Sets'},
-    {id: 6, link: 'https://www.giva.co/cdn/shop/collections/anklets_f99dfe60-fc81-457a-ab33-721352c6e672.jpg?v=1733220813', catName: 'Anckles'},
-    {id: 7, link: 'https://www.giva.co/cdn/shop/collections/Personaloised_250_x_250-min.png?v=1733220865', catName: 'Personalized'},
-    {id: 8, link: 'https://www.giva.co/cdn/shop/collections/Frame_2609057-min.jpg?v=1733220853', catName: 'Men'},
-    {id: 9, link: 'https://www.giva.co/cdn/shop/collections/Mangalsutras_3.jpg?v=1733220746', catName: 'MangleSutra'}
-
+    { id: 1, link: 'https://www.giva.co/cdn/shop/collections/pink_necklaces_pend_copy.jpg?v=1733220967', catName: 'Pendants' },
+    { id: 2, link: 'https://www.giva.co/cdn/shop/collections/pink_rings_c356f6b3-6547-4e39-9b08-dfdf5ecfc2b0.jpg?v=1733220955', catName: 'Rings' },
+    { id: 3, link: 'https://www.giva.co/cdn/shop/collections/earrings_pink-min.png?v=1733220945', catName: 'Earings' },
+    { id: 4, link: 'https://www.giva.co/cdn/shop/collections/pink_br-min.png?v=1733220894', catName: 'Bracelets' },
+    { id: 5, link: 'https://www.giva.co/cdn/shop/collections/sets_pink.webp?v=1733220904', catName: 'Sets' },
+    { id: 6, link: 'https://www.giva.co/cdn/shop/collections/anklets_f99dfe60-fc81-457a-ab33-721352c6e672.jpg?v=1733220813', catName: 'Anckles' },
+    { id: 7, link: 'https://www.giva.co/cdn/shop/collections/Personaloised_250_x_250-min.png?v=1733220865', catName: 'Personalized' },
+    { id: 8, link: 'https://www.giva.co/cdn/shop/collections/Frame_2609057-min.jpg?v=1733220853', catName: 'Men' },
+    { id: 9, link: 'https://www.giva.co/cdn/shop/collections/Mangalsutras_3.jpg?v=1733220746', catName: 'MangleSutra' }
   ]
   return (
     <div className='banner-section'>
-     <div className=' flex-2'>
-     <Slider {...sliderSettings}>
-      {banner.map((item)=> (
-        <div  key={item.id} className='slider-item'>
-          <img className='img-width' src={item.name} />
-        </div>
-      ))}
-      </Slider>
-     </div>
-     <div className='page'>
-      <div className='flex-3'>
-        <Slider {...slider2Settings}>
-          {category.map((item)=> (
-            <div key={item.id} className='catp'>
-              <img className='img-width-2 ' src={item.link}  />
-             <div className='center para1'>{item.catName}</div>
-          
+      <div className=' flex-2'>
+        <Slider {...sliderSettings}>
+          {banner.map((item) => (
+            <div key={item.id} className='slider-item'>
+              <img className='img-width' src={item.name} />
             </div>
           ))}
         </Slider>
       </div>
-     </div>
+      <div className='page'>
+        <div className='flex-3'>
+          <Slider {...slider2Settings}>
+            {category.map((item) => (
+              <div key={item.id} className='catp'>
+                <img className='img-width-2 ' src={item.link} />
+                <div className='center para1'>{item.catName}</div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        {/*  TOP CATE */}
+        <div className=' grid-temp pd-top '>
+          {top.map((item) => (
+            <div key={item.id} className='catDiv'>
+              <img className='img-width-3' src={item.photo} />
+              <p className='catName'>{item.name}</p>
+            </div>
+          ))}
+        </div>
+        {/* Recommended category */}
+        <div className='product pd-top'>
+          <p className='center para-6'>Recommended For You</p>
+          <div className='product-flex  pd-top-1'>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        {/*  banner 1 */}
+        <div className='pd-top'>
+          <img className='img-width' src='https://battulaaljewels.com/website/images/product-banner.webp'/>
+        </div>
+        {/* another recommended */}
+        <div className='product pd-top'>
+          <p className='center para-6'>Trending Product</p>
+          <div className='product-flex  pd-top-1'>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+            <div className='product-container'>
+              <img className='img-width-4' src={ProductRing} />
+              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
+              <p className='para1 mt-1'>The ring of the road</p>
+              <button className='btn-width-1 mt-1'>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

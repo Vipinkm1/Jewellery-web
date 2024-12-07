@@ -29,7 +29,7 @@ const Header = () => {
                 <div className='navbar-container-1'>
                     <h2 onClick={handlehome} className='logo'>Simmu</h2>
                     <div className='input-element'>
-                        <input type='search' className='input-width' placeholder='Search ' />
+                        <input type='search' className='input-width' placeholder='Search for Gold jewellery Diamond jewellery and more... ' />
                         <CiSearch className='search-icon' />
                     </div>
                     <div className='nav-item'>
