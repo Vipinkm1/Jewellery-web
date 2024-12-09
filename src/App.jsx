@@ -10,6 +10,7 @@ import JoinUs from './component/pages/JoinUs'
 import Review from './component/pages/Review'
 import Signup from './component/pages/Signup'
 import Login from './component/pages/Login'
+import FilterPage from './component/pages/FilterPage'
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/signup'  element={<Signup/>}/>
           <Route path='/login' element={<Login/>} />
+          <Route path='/filter' element={<FilterPage/>}/>
         </Routes>
         </Layout>
       </BrowserRouter>

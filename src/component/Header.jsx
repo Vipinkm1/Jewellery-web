@@ -10,6 +10,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [dropDownVisible, setDropDownVisible] = useState(false)
+    const [mens, setMens] = useState(false)
+    const [women, setWomen] = useState(false)
+    
     const navigate = useNavigate()
     const handlehome = () => {
         navigate('/')
@@ -71,19 +74,52 @@ const Header = () => {
                         <RiArrowDropDownLine className='size-1' />
                     </div>
                     <div className=''>
-                        <div className='para2 line'>Men's Jewellery</div>
+                        <Link to='/filter' className='para2 anchor line' onClick={()=> setMens(true)} onMouseEnter={()=> setMens(true)} onMouseLeave={()=> setMens(false)}>Men's Jewellery
+                        <div className='category-border'>
+                                {mens && (
+                                    <div className="dropdown-menu">
+                                        <div className="dropdown-item">Earnings</div>
+                                        <div className="dropdown-item">Rings</div>
+                                        <div className="dropdown-item">Bracelets</div>
+                                        <div className="dropdown-item">Chain</div>
+                                        <div className="dropdown-item">Charms</div>
+                                        <div className="dropdown-item">Pendants</div>
+                                        <div className="dropdown-item">Groom Necklace</div>
+                                    </div>
+                                )}
+                            </div>
+                        </Link>
                     </div>
                     <div className=''>
-                        <div className='para2 line'>Women Jewellery</div>
+                        <Link to='/filter' className='para2 line anchor' onClick={()=> setWomen(true)} onMouseEnter={()=> setWomen(true)} onMouseLeave={()=> setWomen(false)} >Women Jewellery
+                        <div className='category-border'>
+                                {women && (
+                                    <div className="dropdown-menu">
+                                        <div className="dropdown-item">All Categories</div>
+                                        <div className="dropdown-item ">Earnings</div>
+                                        <div className="dropdown-item">Rings</div>
+                                        <div className="dropdown-item">Neckleces</div>
+                                        <div className="dropdown-item">Chain</div>
+                                        <div className="dropdown-item">Bracelets</div>
+                                        <div className="dropdown-item">Nose Pin</div>
+                                        <div className="dropdown-item">Bangles</div>
+                                        <div className="dropdown-item">Anklets</div>
+                                        <div className="dropdown-item">Mangalsutras</div>
+                                        <div className="dropdown-item">Pendants</div>
+                                     
+                                    </div>
+                                )}
+                            </div>
+                        </Link>
                     </div>
                     <div className=''>
-                        <div className='para2 line'>Latest Collection</div>
+                        <Link to='/filter' className='para2 line anchor'>Latest Collection</Link>
                     </div>
                     <div className=''>
-                        <div className='para2 line'>Gift Stores</div>
+                        <Link to='/filter' className='para2 line anchor'>Gift Stores</Link>
                     </div>
                     <div className=''>
-                        <div className='para2 line'>More at Simmu</div>
+                        <Link to='/filter' className='para2 line anchor'>More at Simmu</Link>
                     </div>
                 </div>
             </div>

@@ -51,14 +51,7 @@ const Signup = () => {
                         <label className='label-width'>Mobile Number</label>
                         <input className='input-width-3' name='confirmpassword' type='text' placeholder='Enter confirm password' value={signup.confirmpassword} onChange={handleChange} />
                     </div>
-                    <div className='radio-flex'>
-                        <label className='label-width'>
-                            <input className='radio-size' type="radio" name="gender" value="Male" onChange={handleChange} /> Male
-                        </label>
-                        <label className='label-width'>
-                            <input className='radio-size' type="radio" name="gender" value="Female" onChange={handleChange} /> Female
-                        </label>
-                    </div>
+                    
                     <div >
                     </div>
                     <div className='btn-3'>
