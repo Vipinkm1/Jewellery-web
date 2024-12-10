@@ -5,5 +5,4 @@ const FilterPage = () => {
     <div className='page'>FilterPage</div>
   )
 }
-
 export default FilterPage

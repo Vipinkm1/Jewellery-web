@@ -11,6 +11,7 @@ import Review from './component/pages/Review'
 import Signup from './component/pages/Signup'
 import Login from './component/pages/Login'
 import FilterPage from './component/pages/FilterPage'
+import Wishlist from './component/pages/Wishlist'
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
           <Route path='/signup'  element={<Signup/>}/>
           <Route path='/login' element={<Login/>} />
           <Route path='/filter' element={<FilterPage/>}/>
+          <Route path='/wishlist' element={<Wishlist/>}/>
         </Routes>
         </Layout>
       </BrowserRouter>

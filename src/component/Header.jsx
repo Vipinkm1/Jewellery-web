@@ -44,10 +44,10 @@ const Header = () => {
                             <VscAccount className='nav-icon-size' />
                             <p className='para1'>Account</p>
                         </Link>
-                        <div className='center'>
+                        <Link to={'/wishlist'} className='center anchor'>
                             <VscHeart className='nav-icon-size' />
                             <p className='para1'>Wishlist</p>
-                        </div>
+                        </Link>
                         <div className='center'>
                             <BsCart2 className='nav-icon-size' />
                             <p className='para1'>Cart</p>

@@ -72,7 +72,6 @@ input[type="search"]::-webkit-search-cancel-button {
   font-size: 25px;
   cursor: pointer;
   transition: transform 0.4s ease;
-
 }
 .nav-icon-size:hover{
   transform: scale(1.2);
@@ -175,7 +174,6 @@ input::placeholder{
  .catName{
   position: absolute;
   top: 60px;
- 
   font-size: 20px;
   width: 40%;
   font-weight: 600;
@@ -187,12 +185,18 @@ input::placeholder{
 
  }
  .product-container{
+  position: relative;
   border-radius: 2px;
   padding: 10px;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
  }
- 
+ .wishlist-icon {
+  position: absolute;
+  font-size: 30px;
+  left: 10px;
+}
+
 .bold-1{
   font-weight: 600;
   font-size: 22px;
@@ -327,6 +331,14 @@ input::placeholder{
 .label-width{
   font-size: 15px;
   font-family: 'oswald', sans-serif;
+}
+/*  wishlist page */
+
+.delete-icon{
+  font-size: 22px;
+  position: absolute;
+  left: 10px;
+  
 }
 /*  add css module */
 .radio-size{

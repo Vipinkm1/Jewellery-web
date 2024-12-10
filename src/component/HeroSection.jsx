@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import banner1 from '../assets/banner/20028.jpg'
 import Rings from '../assets/banner/rings.jpeg'
 import ProductRing from '../assets/Jewellery/jwe.jpg'
+import { CiHeart } from "react-icons/ci";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const HeroSection = () => {
 
   //  change the image
-
   //  banner 
   const sliderSettings = {
     dots: false,
@@ -22,7 +24,6 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: false,
   }
-
   // categories
   const slider2Settings = {
     dots: false,
@@ -34,6 +35,12 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: true
   }
+  const [productCart, setProductCart] = useState([
+    { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
+    { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
+    { id: 3, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
+    { id: 4, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
+  ])
   const banner = [
     { id: 1, name: 'https://battulaaljewels.com/website/images/product-banner.webp' },
     { id: 1, name: banner1 },
@@ -59,6 +66,12 @@ const HeroSection = () => {
     { id: 8, link: 'https://www.giva.co/cdn/shop/collections/Frame_2609057-min.jpg?v=1733220853', catName: 'Men' },
     { id: 9, link: 'https://www.giva.co/cdn/shop/collections/Mangalsutras_3.jpg?v=1733220746', catName: 'MangleSutra' }
   ]
+  //  add wishlist
+
+  
+
+
+  
   return (
     <div className='banner-section'>
       <div className=' flex-2'>
@@ -94,67 +107,38 @@ const HeroSection = () => {
         <div className='product pd-top'>
           <p className='center para-6'>Recommended For You</p>
           <div className='product-flex  pd-top-1'>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
+            {productCart.map((product) => (
+              <div className='product-container'>
+                <img className='img-width-4' src={product.img} />
+                <CiHeart className={`wishlist-icon ${product.wishlist ? 'wishlist-active' : ''}`} onClick={() => toggleWishlist(product.id)} />
+                <p className='para2 bold-1 mt-1'>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
+                <p className='para1 mt-1'>{product.title}</p>
+                <button className='btn-width-1 mt-1'>Add to Cart</button>
+              </div>
+            ))}
           </div>
         </div>
         {/*  banner 1 */}
         <div className='pd-top'>
-          <img className='img-width' src='https://battulaaljewels.com/website/images/product-banner.webp'/>
+          <img className='img-width' src='https://battulaaljewels.com/website/images/product-banner.webp' />
         </div>
         {/* another recommended */}
         <div className='product pd-top'>
-          <p className='center para-6'>Trending Product</p>
+          <p className='center para-6'>Recommended For You</p>
           <div className='product-flex  pd-top-1'>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
-            <div className='product-container'>
-              <img className='img-width-4' src={ProductRing} />
-              <p className='para2 bold-1 mt-1'>$1254 <span className='overline-sam'>$</span><span className='overline'>465546</span></p>
-              <p className='para1 mt-1'>The ring of the road</p>
-              <button className='btn-width-1 mt-1'>Add to Cart</button>
-            </div>
+            {productCart.map((product) => (
+              <div className='product-container' key={product.id}>
+                <img className='img-width-4' src={product.img} />
+                <CiHeart className='wishlist-icon' />
+                <p className='para2 bold-1 mt-1'>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
+                <p className='para1 mt-1'>{product.title}</p>
+                <button className='btn-width-1 mt-1'>Add to Cart</button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }
