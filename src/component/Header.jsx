@@ -52,9 +52,7 @@ const Header = () => {
                         </Link>
                         <Link to={'/wishlist'} className='center anchor'>
                             <VscHeart className='nav-icon-size' />
-                       
-                            <span className='cart-count'>{getTotalWishlist()}</span>
-               
+                            {getTotalWishlist() > 0 && <span className='cart-count'>{getTotalWishlist()}</span>}
                             <p className='para1'>Wishlist</p>
                         </Link>
                         <div className='center'>

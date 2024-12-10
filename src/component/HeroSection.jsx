@@ -13,8 +13,7 @@ import { useCart } from './Context/Context';
 
 
 const HeroSection = () => {
-
-  const {addWishlist} = useCart()
+  const { addWishlist } = useCart()
 
   //  change the image
   //  banner 
@@ -39,7 +38,7 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: true
   }
-   const productCart = [
+  const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
     { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
     { id: 3, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
@@ -71,13 +70,27 @@ const HeroSection = () => {
     { id: 9, link: 'https://www.giva.co/cdn/shop/collections/Mangalsutras_3.jpg?v=1733220746', catName: 'MangleSutra' }
   ]
   //  add wishlist
+  const handleAddWishlist = (product) => {
+    //  get the existing wishlist prduct from the localStorage 
+    const existingWishlist =  JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    //  check if the existing product list is available
+
+    const isProductInWishlist = existingWishlist.some((item) => item.id === product.id);
+
+    if(!isProductInWishlist){
+      //  add the new product in the existingWishlist
+      existingWishlist.push(product)
+
+      //  save the updated product localStrage
+
+      localStorage.setItem('wishlist', JSON.stringify(existingWishlist));
+    }
 
 
-  const handleAddWishlist = (product)=> {
     addWishlist(product)
     toast.success('Added Successfully')
   }
-
   return (
     <div className='banner-section'>
       <div className=' flex-2'>
@@ -116,7 +129,7 @@ const HeroSection = () => {
             {productCart.map((product) => (
               <div className='product-container' key={product.id}>
                 <img className='img-width-4' src={product.img} />
-                <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)}/>
+                <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
                 <p className='para2 bold-1 mt-1'>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>
                 <button className='btn-width-1 mt-1'>Add to Cart</button>
