@@ -8,9 +8,13 @@ import ProductRing from '../assets/Jewellery/jwe.jpg'
 import { CiHeart } from "react-icons/ci";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useCart } from './Context/Context';
+
 
 
 const HeroSection = () => {
+
+  const {addWishlist} = useCart()
 
   //  change the image
   //  banner 
@@ -35,17 +39,17 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: true
   }
-  const [productCart, setProductCart] = useState([
+   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
     { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
     { id: 3, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
     { id: 4, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
-  ])
+  ]
   const banner = [
-    { id: 1, name: 'https://battulaaljewels.com/website/images/product-banner.webp' },
-    { id: 1, name: banner1 },
-    { id: 1, name: 'https://listany-prod.s3.amazonaws.com/images/radhikajeweltech/kikjewelsbanner1920x650traditionalnecklacejewellery_1.png' },
-    { id: 1, name: 'https://subalakshmijewellers.com/wp-content/uploads/2021/08/banner-2-1.jpg' }
+    { id: 11, name: 'https://battulaaljewels.com/website/images/product-banner.webp' },
+    { id: 11, name: banner1 },
+    { id: 11, name: 'https://listany-prod.s3.amazonaws.com/images/radhikajeweltech/kikjewelsbanner1920x650traditionalnecklacejewellery_1.png' },
+    { id: 11, name: 'https://subalakshmijewellers.com/wp-content/uploads/2021/08/banner-2-1.jpg' }
   ]
   const top = [
     { id: 1, name: 'ENGAGEMENT RINGS', photo: Rings },
@@ -68,10 +72,12 @@ const HeroSection = () => {
   ]
   //  add wishlist
 
-  
 
+  const handleAddWishlist = (product)=> {
+    addWishlist(product)
+    toast.success('Added Successfully')
+  }
 
-  
   return (
     <div className='banner-section'>
       <div className=' flex-2'>
@@ -108,9 +114,9 @@ const HeroSection = () => {
           <p className='center para-6'>Recommended For You</p>
           <div className='product-flex  pd-top-1'>
             {productCart.map((product) => (
-              <div className='product-container'>
+              <div className='product-container' key={product.id}>
                 <img className='img-width-4' src={product.img} />
-                <CiHeart className={`wishlist-icon ${product.wishlist ? 'wishlist-active' : ''}`} onClick={() => toggleWishlist(product.id)} />
+                <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)}/>
                 <p className='para2 bold-1 mt-1'>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>
                 <button className='btn-width-1 mt-1'>Add to Cart</button>

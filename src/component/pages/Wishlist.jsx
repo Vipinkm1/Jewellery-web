@@ -1,25 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { AiOutlineDelete } from "react-icons/ai";
-
+import { useCart } from '../Context/Context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const Wishlist = () => {
-  const [wishlist, setWishlist] = useState([]);
-
-  useEffect(() => {
-    // Retrieve the wishlist from localStorage
-    const savedWishlist = localStorage.getItem('wishlist');
-    if (savedWishlist) {
-      setWishlist(JSON.parse(savedWishlist));
-    }
-  }, []);
-
-  const handleDeleteProduct = (id) => {
-    const updatedWishlist = wishlist.filter((product) => product.id !== id);
-    setWishlist(updatedWishlist);
-    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
-  };
+  const { wishlist, removeWishlist } = useCart()
 
 
+  const handleRemoveWishlist = (index) => {
+    removeWishlist(index)
+    toast.success('Successfully deleted wishlist product')
+  }
   //  delete product 
   return (
     <div className='page'>
@@ -28,22 +20,28 @@ const Wishlist = () => {
         <p>Your wishlist is empty.</p>
       ) : (
         <div className="product-flex pd-top">
-          {wishlist.map((product) => (
-            <div className="product-container" key={product.id}>
-              <img className="img-width-4" src={product.img} />
-              <AiOutlineDelete className='delete-icon' onClick={() => handleDeleteProduct(product.id)} />
+          {wishlist.map((productWishlist, index) => (
+            <div className="product-container" key={index}>
+              {productWishlist.img ? (
+                <img className="img-width-4" src={productWishlist.img} />
+              ) : (
+                <p>No Image Available</p>
+              )}
+              <AiOutlineDelete className='delete-icon' onClick={() => handleRemoveWishlist(index)} />
               <p className="para2 bold-1 mt-1">
-                {product.Prize}{' '}
-                <span className="overline-sam">{product.symbol}</span>
-                <span className="overline">{product.discountPrize}</span>
+                {productWishlist.Prize}{' '}
+                <span className="overline-sam">{productWishlist.symbol}</span>
+                <span className="overline">{productWishlist.discountPrize}</span>
               </p>
-              <p className="para1 mt-1">{product.title}</p>
+              <p className="para1 mt-1">{productWishlist.title}</p>
               <button className="btn-width-1 mt-1">Add to Cart</button>
             </div>
           ))}
         </div>
       )}
+      <ToastContainer/>
     </div>
+
   )
 }
 

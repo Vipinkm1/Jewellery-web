@@ -6,12 +6,17 @@ import { BsCart2 } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from './Context/Context';
 
 
 const Header = () => {
+
+    const { getTotalWishlist} = useCart(); 
+   
     const [dropDownVisible, setDropDownVisible] = useState(false)
     const [mens, setMens] = useState(false)
     const [women, setWomen] = useState(false)
+    
     
     const navigate = useNavigate()
     const handlehome = () => {
@@ -26,6 +31,7 @@ const Header = () => {
     const handleMouseLeave = () => {
         setDropDownVisible(false)
     }
+
     return (
         <div className=''>
             <div className='navbar'>
@@ -46,6 +52,9 @@ const Header = () => {
                         </Link>
                         <Link to={'/wishlist'} className='center anchor'>
                             <VscHeart className='nav-icon-size' />
+                       
+                            <span className='cart-count'>{getTotalWishlist()}</span>
+               
                             <p className='para1'>Wishlist</p>
                         </Link>
                         <div className='center'>

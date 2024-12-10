@@ -12,9 +12,11 @@ import Signup from './component/pages/Signup'
 import Login from './component/pages/Login'
 import FilterPage from './component/pages/FilterPage'
 import Wishlist from './component/pages/Wishlist'
+import { CartProvider } from './component/Context/Context'
 function App() {
   return (
     <>
+    <CartProvider>
       <BrowserRouter>
       <Layout>
         <Routes>
@@ -31,6 +33,7 @@ function App() {
         </Routes>
         </Layout>
       </BrowserRouter>
+      </CartProvider>
     </>
   )
 }
