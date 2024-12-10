@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdStorefront } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { VscHeart } from "react-icons/vsc";
 import { BsCart2 } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, parsePath, useNavigate } from 'react-router-dom';
 import { useCart } from './Context/Context';
 
 
@@ -32,6 +32,19 @@ const Header = () => {
         setDropDownVisible(false)
     }
 
+    //  call userAuth from the localStorage 
+     const [user, setUser] = useState(null)
+
+     useEffect(()=> {
+        const userAuth = localStorage.getItem('signup')
+        if(userAuth){
+            const parseAuth = JSON.parse(userAuth)
+            setUser(parseAuth)
+        }
+       
+     }, [])
+    
+
     return (
         <div className=''>
             <div className='navbar'>
@@ -48,7 +61,7 @@ const Header = () => {
                         </div>
                         <Link to={'/signup'} className='center anchor'>
                             <VscAccount className='nav-icon-size' />
-                            <p className='para1'>Account</p>
+                            <p className='para1'>{user?.fullname || 'Account'}</p>
                         </Link>
                         <Link to={'/wishlist'} className='center anchor'>
                             <VscHeart className='nav-icon-size' />

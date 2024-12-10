@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
     const navigate = useNavigate()
@@ -8,7 +10,8 @@ const Signup = () => {
         username: '',
         password: '',
         confirmpassword: '',
-        gender: ''
+        number: ''
+
     })
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,8 +22,18 @@ const Signup = () => {
     }
     const handleSignUpSubmit = (e) => {
         e.preventDefault()
-        setSignUp(signup)
-        console.log(signup)
+        const checkEmpty = Object.values(signup).every((field) => field.trim() !== '')
+        if(checkEmpty){
+            setSignUp(signup)
+            localStorage.setItem('signup', JSON.stringify(signup))
+            toast.success('Successfully register account')
+            setTimeout(()=>{
+                navigate('/login')
+            }, 2000)
+        }
+        else{
+            toast.error('input value is empty')
+        }
     }
     const handleLogin = () => {
         navigate('/login')
@@ -49,7 +62,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <label className='label-width'>Mobile Number</label>
-                        <input className='input-width-3' name='confirmpassword' type='text' placeholder='Enter confirm password' value={signup.confirmpassword} onChange={handleChange} />
+                        <input className='input-width-3' name='number' type='text' placeholder='Enter mobile number' value={signup.number} onChange={handleChange} />
                     </div>
                     
                     <div >
@@ -60,6 +73,7 @@ const Signup = () => {
                 </form>
                 <p className='topex mt-1'>Already Register?<span onClick={handleLogin} className='spanish'>Login</span></p>
             </div>
+            <ToastContainer/>
         </div>
     )
 }
