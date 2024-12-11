@@ -21,7 +21,7 @@
   padding: 10px 40px;
 }
 .navbar.scrolled {
-  background-color: #f8f9fa; /* Changes background color when scrolled */
+/* Changes background color when scrolled */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .nav-item{
