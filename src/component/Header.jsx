@@ -5,19 +5,19 @@ import { VscHeart } from "react-icons/vsc";
 import { BsCart2 } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { Link, parsePath, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from './Context/Context';
 
 
 const Header = () => {
 
-    const { getTotalWishlist} = useCart(); 
-   
+    const { getTotalWishlist } = useCart();
+
     const [dropDownVisible, setDropDownVisible] = useState(false)
     const [mens, setMens] = useState(false)
     const [women, setWomen] = useState(false)
-    
-    
+
+
     const navigate = useNavigate()
     const handlehome = () => {
         navigate('/')
@@ -31,23 +31,29 @@ const Header = () => {
     const handleMouseLeave = () => {
         setDropDownVisible(false)
     }
-
     //  call userAuth from the localStorage 
-     const [user, setUser] = useState(null)
-
-     useEffect(()=> {
+    const [user, setUser] = useState(null)
+    useEffect(() => {
         const userAuth = localStorage.getItem('signup')
-        if(userAuth){
+        if (userAuth) {
             const parseAuth = JSON.parse(userAuth)
             setUser(parseAuth)
         }
-       
-     }, [])
-    
+    }, [])
+    //   header scroll 
 
+    const [scrolled, setScrolled] = useState(true);
+    useEffect(()=> {
+        const handleScroll = () => {
+            setScrolled(window.screenY > 50);
+
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [])
     return (
-        <div className=''>
-            <div className='navbar'>
+  
+            <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
                 <div className='navbar-container-1'>
                     <h2 onClick={handlehome} className='logo'>Simmu</h2>
                     <div className='input-element'>
@@ -68,10 +74,10 @@ const Header = () => {
                             {getTotalWishlist() > 0 && <span className='cart-count'>{getTotalWishlist()}</span>}
                             <p className='para1'>Wishlist</p>
                         </Link>
-                        <div className='center'>
+                        <Link to ={'/cart'} className='center anchor'>
                             <BsCart2 className='nav-icon-size' />
                             <p className='para1'>Cart</p>
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className='next-nav'>
@@ -94,8 +100,8 @@ const Header = () => {
                         <RiArrowDropDownLine className='size-1' />
                     </div>
                     <div className=''>
-                        <Link to='/filter' className='para2 anchor line' onClick={()=> setMens(true)} onMouseEnter={()=> setMens(true)} onMouseLeave={()=> setMens(false)}>Men's Jewellery
-                        <div className='category-border'>
+                        <Link to='/filter' className='para2 anchor line' onClick={() => setMens(true)} onMouseEnter={() => setMens(true)} onMouseLeave={() => setMens(false)}>Men's Jewellery
+                            <div className='category-border'>
                                 {mens && (
                                     <div className="dropdown-menu">
                                         <div className="dropdown-item">Earnings</div>
@@ -111,8 +117,8 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className=''>
-                        <Link to='/filter' className='para2 line anchor' onClick={()=> setWomen(true)} onMouseEnter={()=> setWomen(true)} onMouseLeave={()=> setWomen(false)} >Women Jewellery
-                        <div className='category-border'>
+                        <Link to='/filter' className='para2 line anchor' onClick={() => setWomen(true)} onMouseEnter={() => setWomen(true)} onMouseLeave={() => setWomen(false)} >Women Jewellery
+                            <div className='category-border'>
                                 {women && (
                                     <div className="dropdown-menu">
                                         <div className="dropdown-item">All Categories</div>
@@ -126,7 +132,7 @@ const Header = () => {
                                         <div className="dropdown-item">Anklets</div>
                                         <div className="dropdown-item">Mangalsutras</div>
                                         <div className="dropdown-item">Pendants</div>
-                                     
+
                                     </div>
                                 )}
                             </div>
@@ -143,7 +149,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-        </div>
+
     )
 }
 export default Header

@@ -39,6 +39,7 @@ const Signup = () => {
         navigate('/login')
         console.log('Login sucessfully')
     }
+    
     return (
         <div className='popup'>
             <div className='border-1'>
