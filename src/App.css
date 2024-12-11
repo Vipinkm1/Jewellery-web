@@ -87,7 +87,7 @@ input[type="search"]::-webkit-search-cancel-button {
   border-radius: 50%;
   padding: 2px 5px;
   font-size: 12px;
-  right: 100px;
+  right: 35px;
   top: 7px;
   font-weight: 600;
 }

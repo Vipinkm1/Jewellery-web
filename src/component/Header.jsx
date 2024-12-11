@@ -11,7 +11,7 @@ import { useCart } from './Context/Context';
 
 const Header = () => {
 
-    const { getTotalWishlist } = useCart();
+    const { getTotalWishlist, getTotalCart } = useCart();
 
     const [dropDownVisible, setDropDownVisible] = useState(false)
     const [mens, setMens] = useState(false)
@@ -76,6 +76,7 @@ const Header = () => {
                         </Link>
                         <Link to ={'/cart'} className='center anchor'>
                             <BsCart2 className='nav-icon-size' />
+                            {getTotalCart() > 0 && <span className='cart-count-1'>{getTotalCart()}</span>}
                             <p className='para1'>Cart</p>
                         </Link>
                     </div>

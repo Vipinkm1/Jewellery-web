@@ -9,6 +9,7 @@ import { CiHeart } from "react-icons/ci";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCart } from './Context/Context';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -16,7 +17,7 @@ const HeroSection = () => {
   const { addWishlist, addTocart } = useCart()
 
 
-
+ const navigate = useNavigate()
   //  change the image
   //  banner 
   const sliderSettings = {
@@ -85,10 +86,12 @@ const HeroSection = () => {
     }
     addWishlist(product)
     toast.success('Added Successfully')
+    console.log('wishlist', product)
   }
   const handleAddtoCart = (product) =>{
      addTocart(product)
      toast.success('Add ho gya bhai cart me')
+     console.log("producttocart", product)
   }
   return (
     <div className='banner-section'>
@@ -127,7 +130,7 @@ const HeroSection = () => {
           <div className='product-flex  pd-top-1'>
             {productCart.map((product) => (
               <div className='product-container' key={product.id}>
-                <img className='img-width-4' src={product.img} />
+                <img className='img-width-4' src={product.img} onClick={() => navigate('/product-detail')} />
                 <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
                 <p className='para2 bold-1 mt-1'>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>

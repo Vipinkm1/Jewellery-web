@@ -14,6 +14,7 @@ import FilterPage from './component/pages/FilterPage'
 import Wishlist from './component/pages/Wishlist'
 import { CartProvider } from './component/Context/Context'
 import Cart from './component/pages/Cart'
+import ProductDetail from './component/pages/ProductDetail'
 function App() {
   return (
     <>
@@ -32,6 +33,7 @@ function App() {
           <Route path='/filter' element={<FilterPage/>}/>
           <Route path='/wishlist' element={<Wishlist/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path = '/product-detail' element={<ProductDetail/>}/>
         </Routes>
         </Layout>
       </BrowserRouter>

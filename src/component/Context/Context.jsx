@@ -30,8 +30,12 @@ const addTocart = (product) => {
 const getTotalCart = ()=> {
     return cart.length;
 }
+const removeCart = (index) => {
+    const deleteCart = cart.filter((_, i) => i !== index)
+    setCart(deleteCart)
+}
 return (
-    <Context.Provider value={{wishlist,cart, addWishlist, removeWishlist, getTotalWishlist, addTocart, getTotalCart}}>
+    <Context.Provider value={{wishlist,cart, addWishlist, removeWishlist, getTotalWishlist, addTocart, getTotalCart, removeCart}}>
         {children}
     </Context.Provider>
 )
