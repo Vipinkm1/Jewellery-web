@@ -42,10 +42,10 @@ const HeroSection = () => {
     arrows: true
   }
   const productCart = [
-    { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
-    { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
-    { id: 3, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
-    { id: 4, img: ProductRing, title: 'The rings of the road', Prize: '$4524', symbol: '$', discountPrize: '4528' },
+    { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
+    { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
+    { id: 3, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
+    { id: 4, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
   ]
   const banner = [
     { id: 11, name: 'https://battulaaljewels.com/website/images/product-banner.webp' },
@@ -89,6 +89,13 @@ const HeroSection = () => {
     console.log('wishlist', product)
   }
   const handleAddtoCart = (product) =>{
+    const existingCart = JSON.parse(localStorage.getItem('ProductCart', ))|| []
+    const isexistingCart = existingCart.some((item)=> item.id === product.id);
+    
+    if(!isexistingCart){
+      existingCart.push(product)
+      localStorage.setItem('productCart', JSON.stringify(existingCart));
+    }
      addTocart(product)
      toast.success('Add ho gya bhai cart me')
      console.log("producttocart", product)

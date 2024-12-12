@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AiOutlineDelete } from "react-icons/ai";
 import { useCart } from '../Context/Context';
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,7 +6,8 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 const Wishlist = () => {
-  const { wishlist, removeWishlist } = useCart()
+  const { wishlist,  removeWishlist } = useCart()
+ 
   const handleRemoveWishlist = (index) => {
     removeWishlist(index)
     toast.success('Successfully deleted wishlist product')
