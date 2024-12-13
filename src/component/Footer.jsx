@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='footer-container-2'>
-          <h2 className='heading   color font'>Quick Links</h2>
+          <h2 className='heading    font'>Quick Links</h2>
           <div className='some-content'>
             <Link to='/about-us' className='footer-services line2'>About Us</Link>
             <Link to='/blogs' className='footer-services line2'>Blogs</Link>
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='footer-container-2'>
-          <h2 className='heading color font'>Information</h2>
+          <h2 className='heading  font'>Information</h2>
           <div className='some-content'>
             <div to='' className='footer-services line2'>Shipping & Returns</div>
             <div to='' className='footer-services line2'>Privacy & Policy</div>
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='footer-container-2'>
-          <h2 className='heading color font '>Contact Info</h2>
+          <h2 className='heading c font '>Contact Info</h2>
           <div className='footer-content-flex'>
             <div className='some-content'>
               <p className=''>India-</p>

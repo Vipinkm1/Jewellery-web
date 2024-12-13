@@ -15,9 +15,7 @@ import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
   const { addWishlist, addTocart } = useCart()
-
-
- const navigate = useNavigate()
+  const navigate = useNavigate()
   //  change the image
   //  banner 
   const sliderSettings = {
@@ -88,17 +86,16 @@ const HeroSection = () => {
     toast.success('Added Successfully')
     console.log('wishlist', product)
   }
-  const handleAddtoCart = (product) =>{
-    const existingCart = JSON.parse(localStorage.getItem('ProductCart', ))|| []
-    const isexistingCart = existingCart.some((item)=> item.id === product.id);
-    
-    if(!isexistingCart){
+  const handleAddtoCart = (product) => {
+    const existingCart = JSON.parse(localStorage.getItem('ProductCart',)) || []
+    const isexistingCart = existingCart.some((item) => item.id === product.id);
+    if (!isexistingCart) {
       existingCart.push(product)
       localStorage.setItem('productCart', JSON.stringify(existingCart));
     }
-     addTocart(product)
-     toast.success('Add ho gya bhai cart me')
-     console.log("producttocart", product)
+    addTocart(product)
+    toast.success('Add ho gya bhai cart me')
+    console.log("producttocart", product)
   }
   return (
     <div className='banner-section'>
@@ -139,9 +136,9 @@ const HeroSection = () => {
               <div className='product-container' key={product.id}>
                 <img className='img-width-4' src={product.img} onClick={() => navigate('/product-detail')} />
                 <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
-                <p className='para2 bold-1 mt-1'>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
+                <p className='para2 bold-1 mt-1'><span className=''>{product.symbol}</span>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>
-                <button className='btn-width-1 mt-1' onClick={()=> handleAddtoCart(product)}>Add to Cart</button>
+                <button className='btn-width-1 mt-1' onClick={() => handleAddtoCart(product)}>Add to Cart</button>
               </div>
             ))}
           </div>
@@ -158,9 +155,9 @@ const HeroSection = () => {
               <div className='product-container' key={product.id}>
                 <img className='img-width-4' src={product.img} />
                 <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
-                <p className='para2 bold-1 mt-1'>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
+                <p className='para2 bold-1 mt-1'><span className=''>{product.symbol}</span>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>
-                <button className='btn-width-1 mt-1'onClick={()=> handleAddtoCart(product)}>Add to Cart</button>
+                <button className='btn-width-1 mt-1' onClick={() => handleAddtoCart(product)}>Add to Cart</button>
               </div>
             ))}
           </div>

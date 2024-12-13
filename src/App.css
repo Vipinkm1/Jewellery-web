@@ -162,8 +162,131 @@ input::placeholder{
   font-size: 25px;
   color: #bdb9b9;
 }
-/*  hero section */
+/*  product detail */
 
+.product-item{
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  width: 100%;
+  height:100vh ;
+}
+
+.product-border{
+  border: 1px solid #dad7d7;
+  width: 80%;
+  padding: 10px;
+  height: 60%;
+}
+.product-img{
+  width: 100%;
+  height: 100%;
+ object-fit: cover;
+ cursor: pointer;
+}
+.product-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+}
+.product-flex-1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dad7d7;
+  padding: 10px;
+}
+.p-1{
+  border: 1px solid #dad7d7;
+  width: 100%;
+  height: 100px;
+}
+ .page-detail{
+  padding:30px 40px ;
+ }
+ .product-border-2{
+  border: 1px solid #dad7d7;
+  width: 100%;
+  padding: 10px;
+}
+.title-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.share-icon{
+  font-size: 25px;
+  cursor: pointer;
+}
+.rating-flex{
+  display: flex;
+align-items: center;
+  justify-content: start;
+  gap: 5px;
+  border: 1px solid black;
+  width:17%;
+  padding: 5px;
+  border-radius: 20px;
+  
+}
+.rating{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2px;
+
+}
+.btn-width-2{
+  width: 20%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: rgb(238, 196, 196);
+}
+.btn-width-2:hover{
+  background-color: #f5d7d7;
+  transition: 0.6s ease-in-out;
+}
+.h1{
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+}
+.gray-color{
+  color: #bdb9b9;
+}
+.star-width{
+  width: 10px;
+  height: 10px;
+}
+.special-offer{
+  font-size: 30px;
+}
+.description-pd{
+  padding: 10px 20px;
+  background-color: #f6eded;
+}
+.color{
+  color: rgb(111, 5, 250);
+}
+.para7{
+  font-size: 25px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.provide-border{
+  border: 1px solid #dad7d7;
+  background-color: #f6eded;
+  padding: 20px;
+  border-radius: 2px;
+}
+/*  hero section */
 .img-width{
   width: 100%;
   height: 400px;
@@ -377,6 +500,7 @@ input::placeholder{
 }
 .para-6{
   font-size: 25px;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
 }
 .message-box-text{
   width: 800px;
@@ -459,7 +583,6 @@ input::placeholder{
   font-size: 22px;
   position: absolute;
   left: 10px;
-  
 }
 /*  add css module */
 .radio-size{

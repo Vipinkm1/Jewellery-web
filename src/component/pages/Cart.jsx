@@ -56,7 +56,7 @@ const Cart = () => {
                                     <div className='cartflex-2'>
                                         <p className='para1'>{cartItem.title}</p>
                                         <div className='cartflex-1'>
-                                            <p className='para2 bold-1 mt-1'>{cartItem.Prize}<span className='overline-sam'>{cartItem.symbol}</span><span className='overline'>{cartItem.discountPrize}</span></p>
+                                            <p className='para2 bold-1 mt-1'><span className=''>{cartItem.symbol}</span>{cartItem.Prize}<span className='overline-sam'>{cartItem.symbol}</span><span className='overline'>{cartItem.discountPrize}</span></p>
                                             <div className='cart-flex'>
                                                 <button className='inc' onClick={() => handleDec(index)}>-</button>
                                                 <p className='valuesize'>{quantities[index]}</p>
