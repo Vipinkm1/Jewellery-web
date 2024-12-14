@@ -10,8 +10,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCart } from './Context/Context';
 import { useNavigate } from 'react-router-dom';
-
-
+import Ring from '../assets/Category/Rings.webp';
+import Anckles from '../assets/Category/Anckles.jpg';
+import Bracel from '../assets/Category/Bracelet.webp';
+import Earnings from '../assets/Category/Earnings.webp';
+import Mangla from '../assets/Category/manglasutra.jpg';
+import Men from '../assets/Category/men.webp'
+import Pendant from '../assets/Category/pendant.jpg'
+import Personolised from '../assets/Category/personolised.webp';
+import Set from '../assets/Category/sets_pink.webp'
 
 const HeroSection = () => {
   const { addWishlist, addTocart } = useCart()
@@ -60,15 +67,16 @@ const HeroSection = () => {
     { id: 6, name: 'ENGAGEMENT KIDS PARTYBEAR', photo: Rings },
   ]
   const category = [
-    { id: 1, link: 'https://www.giva.co/cdn/shop/collections/pink_necklaces_pend_copy.jpg?v=1733220967', catName: 'Pendants' },
-    { id: 2, link: 'https://www.giva.co/cdn/shop/collections/pink_rings_c356f6b3-6547-4e39-9b08-dfdf5ecfc2b0.jpg?v=1733220955', catName: 'Rings' },
-    { id: 3, link: 'https://www.giva.co/cdn/shop/collections/earrings_pink-min.png?v=1733220945', catName: 'Earings' },
-    { id: 4, link: 'https://www.giva.co/cdn/shop/collections/pink_br-min.png?v=1733220894', catName: 'Bracelets' },
-    { id: 5, link: 'https://www.giva.co/cdn/shop/collections/sets_pink.webp?v=1733220904', catName: 'Sets' },
-    { id: 6, link: 'https://www.giva.co/cdn/shop/collections/anklets_f99dfe60-fc81-457a-ab33-721352c6e672.jpg?v=1733220813', catName: 'Anckles' },
-    { id: 7, link: 'https://www.giva.co/cdn/shop/collections/Personaloised_250_x_250-min.png?v=1733220865', catName: 'Personalized' },
-    { id: 8, link: 'https://www.giva.co/cdn/shop/collections/Frame_2609057-min.jpg?v=1733220853', catName: 'Men' },
-    { id: 9, link: 'https://www.giva.co/cdn/shop/collections/Mangalsutras_3.jpg?v=1733220746', catName: 'MangleSutra' }
+    { id: 1, link: Ring, catName: 'Rings' },
+    { id: 2, link: Anckles, catName: 'Anckles' },
+    { id: 3, link: Bracel, catName: 'Bracelets' },
+    { id: 4, link: Earnings, catName: 'Earnings' },
+    { id: 5, link: Mangla, catName: 'ManglaSutra' },
+    { id: 6, link: Men, catName: 'Men' },
+    { id: 7, link: Pendant, catName: 'Pendant' },
+    { id: 8, link: Personolised , catName: 'Personolised' },
+    { id: 9, link: Set, catName: 'Set' },
+   
   ]
   //  add wishlist
   const handleAddWishlist = (product) => {
@@ -153,7 +161,7 @@ const HeroSection = () => {
           <div className='product-flex  pd-top-1'>
             {productCart.map((product) => (
               <div className='product-container' key={product.id}>
-                <img className='img-width-4' src={product.img} />
+                <img className='img-width-4' src={product.img} onClick={() => navigate('/product-detail')} />
                 <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
                 <p className='para2 bold-1 mt-1'><span className=''>{product.symbol}</span>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>

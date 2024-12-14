@@ -16,9 +16,10 @@ import { useCart } from '../Context/Context';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CiHeart } from "react-icons/ci";
+import ReactImageMagnify from 'react-image-magnify';
 const ProductDetail = () => {
   const { addWishlist, addTocart } = useCart()
-
+  
   const navigate = useNavigate()
   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -57,7 +58,21 @@ const ProductDetail = () => {
     <div className='page-detail'>
       <div className='product-item'>
         <div className='product-border'>
-          <img src={Jwellery} className='product-img' />
+          {/* <img src={Jwellery} className='product-img' />   */}
+          <ReactImageMagnify  {...{
+            smallImage: {
+              alt: 'Wristwatch by Ted Baker London',
+              isFluidWidth: false,
+              width: 600,
+              height: 450,
+              src: Jwellery
+            },
+            largeImage: {
+              src: Jwellery,
+              width: 2000,
+              height: 1800
+            }
+          }} />
           <div className='product-flex-1 mt-1 '>
             <div className='p-1'>
               <img src={Jwellery} className='product-img' />
