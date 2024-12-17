@@ -46,6 +46,7 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: true
   }
+  
   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
     { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -74,9 +75,8 @@ const HeroSection = () => {
     { id: 5, link: Mangla, catName: 'ManglaSutra' },
     { id: 6, link: Men, catName: 'Men' },
     { id: 7, link: Pendant, catName: 'Pendant' },
-    { id: 8, link: Personolised , catName: 'Personolised' },
+    { id: 8, link: Personolised, catName: 'Personolised' },
     { id: 9, link: Set, catName: 'Set' },
-   
   ]
   //  add wishlist
   const handleAddWishlist = (product) => {

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Jwellery from '../../assets/Jewellery/jwe.jpg'
 import { VscShare } from "react-icons/vsc";
 import Star from '../../assets/Jewellery/star.png'
 import { BiSolidOffer } from "react-icons/bi";
-import { IoIosAdd } from "react-icons/io";
+import Kangana from '../../assets/Jewellery/kangan.jpg'
 import { MdOutlineReplay30 } from "react-icons/md";
 import { TbLifebuoy } from "react-icons/tb";
 import { LiaCertificateSolid } from "react-icons/lia";
@@ -17,9 +17,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CiHeart } from "react-icons/ci";
 import ReactImageMagnify from 'react-image-magnify';
+import Har1 from '../../assets/Jewellery/har.jpg'
+import Har2 from '../../assets/Jewellery/har1.jpg'
+
 const ProductDetail = () => {
   const { addWishlist, addTocart } = useCart()
-  
+  const [open, setOpen] = useState(false)
+  const [second, setSecond] = useState(false)
+  const [third, setThird] = useState(false)
+
   const navigate = useNavigate()
   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -75,13 +81,13 @@ const ProductDetail = () => {
           }} />
           <div className='product-flex-1 mt-1 '>
             <div className='p-1'>
-              <img src={Jwellery} className='product-img' />
+              <img src={Kangana} className='product-img' />
             </div>
             <div className='p-1'>
-              <img src={Jwellery} className='product-img' />
+              <img src={Har1} className='product-img' />
             </div>
             <div className='p-1'>
-              <img src={Jwellery} className='product-img' />
+              <img src={Har2} className='product-img' />
             </div>
             <div className='p-1'>
               <img src={Jwellery} className='product-img' />
@@ -123,16 +129,35 @@ const ProductDetail = () => {
             </div>
             <div className='title-flex mt-1 description-pd'>
               <p className=''>Description</p>
-              <IoIosAdd className='para7' />
+              <div className='para7' onClick={() => setOpen(!open)}>{open ? '-' : '+'}</div>
             </div>
+            {open && (
+              <div className=' description-container'>
+                <p>Own a ring that sparkles in sunlight, and beautifies the glow of your hand. Get yours today and sparkle on.</p>
+                <div className='mt-1'>
+                  <div className=''>description1</div>
+                  <div className=''>description2</div>
+                  <div className=''>description3</div>
+                  <div className=''>description4</div>
+                </div>
+              </div>
+            )}
             <div className='title-flex mt-1 description-pd'>
               <p className=''>Product Detail</p>
-              <IoIosAdd className='para7' />
+              <div className='para7' onClick={() => setSecond(!second)}>{second ? '-' : '+'}</div>
             </div>
+            {second && (
+              <div className='description-container'>
+              </div>
+            )}
             <div className='title-flex mt-1 description-pd'>
               <p className=''>Costomization</p>
-              <IoIosAdd className='para7' />
+              <div className='para7' onClick={() => setThird(!third)}>{third ? '-' : '+'}</div>
             </div>
+            {third && (
+              <div className='description-container'>
+              </div>
+            )}
             <div className='mt-2 grid-temp provide-border'>
               <div className='radio-flex'>
                 <MdOutlineReplay30 className='special-offer' />
