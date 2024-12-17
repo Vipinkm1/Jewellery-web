@@ -40,7 +40,6 @@ const Wishlist = () => {
       )}
       <ToastContainer />
     </div>
-
   )
 }
 export default Wishlist

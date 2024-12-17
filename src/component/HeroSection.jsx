@@ -46,7 +46,7 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: true
   }
-  
+
   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
     { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -104,6 +104,7 @@ const HeroSection = () => {
     addTocart(product)
     toast.success('Add ho gya bhai cart me')
     console.log("producttocart", product)
+
   }
   return (
     <div className='banner-section'>
@@ -142,7 +143,14 @@ const HeroSection = () => {
           <div className='product-flex  pd-top-1'>
             {productCart.map((product) => (
               <div className='product-container' key={product.id}>
-                <img className='img-width-4' src={product.img} onClick={() => navigate('/product-detail')} />
+                <img
+                  className="img-width-4"
+                  src={product.img}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolls to the top smoothly
+                    navigate('/product-detail'); // Navigates to the product detail page
+                  }}
+                />
                 <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
                 <p className='para2 bold-1 mt-1'><span className=''>{product.symbol}</span>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>
@@ -175,5 +183,4 @@ const HeroSection = () => {
     </div>
   )
 }
-
 export default HeroSection

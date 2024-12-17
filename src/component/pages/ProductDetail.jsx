@@ -26,6 +26,9 @@ const ProductDetail = () => {
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
 
+  //  image change
+  const [mainImage, setMainImage] = useState(Jwellery)
+
   const navigate = useNavigate()
   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -71,26 +74,26 @@ const ProductDetail = () => {
               isFluidWidth: false,
               width: 600,
               height: 450,
-              src: Jwellery
+              src: mainImage
             },
             largeImage: {
-              src: Jwellery,
+              src: mainImage,
               width: 2000,
               height: 1800
             }
           }} />
           <div className='product-flex-1 mt-1 '>
             <div className='p-1'>
-              <img src={Kangana} className='product-img' />
+              <img src={Kangana} className='product-img' onClick={() => setMainImage(Kangana)} />
             </div>
             <div className='p-1'>
-              <img src={Har1} className='product-img' />
+              <img src={Har1} className='product-img' onClick={() => setMainImage(Har1)} />
             </div>
             <div className='p-1'>
-              <img src={Har2} className='product-img' />
+              <img src={Har2} className='product-img' onClick={() => setMainImage(Har2)} />
             </div>
             <div className='p-1'>
-              <img src={Jwellery} className='product-img' />
+              <img src={Jwellery} className='product-img' onClick={() => setMainImage(Jwellery)} />
             </div>
           </div>
         </div>

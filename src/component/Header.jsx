@@ -10,7 +10,6 @@ import { useCart } from './Context/Context';
 
 
 const Header = () => {
-    
     const { getTotalWishlist, getTotalCart } = useCart();
     const [dropDownVisible, setDropDownVisible] = useState(false)
     const [mens, setMens] = useState(false)
@@ -19,6 +18,7 @@ const Header = () => {
     const navigate = useNavigate()
     const handlehome = () => {
         navigate('/')
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
     const handleOpen = () => {
         setDropDownVisible(true)
@@ -48,7 +48,6 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
     return (
-
         <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className='navbar-container-1'>
                 <h2 onClick={handlehome} className='logo'>Simmu</h2>
