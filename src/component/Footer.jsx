@@ -6,8 +6,10 @@ import Twitter from '../assets/Social/twitter.png'
 import Youtube from '../assets/Social/youtube.png'
 import { MdEmail, MdPhone } from 'react-icons/md'
 import { GrLocation } from "react-icons/gr";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const Footer = () => {
+
+  const navigate = useNavigate()
   return (
     <div className='footer'>
       <div className='footer-flex '>
@@ -21,7 +23,7 @@ const Footer = () => {
         <div className='footer-container-2'>
           <h2 className='heading    font'>Quick Links</h2>
           <div className='some-content'>
-            <Link to='/about-us' className='footer-services line2'>About Us</Link>
+            <div  onClick={()=> { window.scrollTo({top: 0, behavior: 'smooth'}); navigate('/about-us')}} className='footer-services line2'>About Us</div>
             <Link to='/blogs' className='footer-services line2'>Blogs</Link>
             <Link to='/join-us' className='footer-services line2'>Join Us</Link>
             <Link to='/contact' className='footer-services line2'>Contact Us</Link>
@@ -31,11 +33,11 @@ const Footer = () => {
         <div className='footer-container-2'>
           <h2 className='heading  font'>Information</h2>
           <div className='some-content'>
-            <div to='' className='footer-services line2'>Shipping & Returns</div>
-            <div to='' className='footer-services line2'>Privacy & Policy</div>
-            <div to='' className='footer-services line2'>Internation Shipping</div>
-            <div to='' className='footer-services line2'>FAQs & Support</div>
-            <div to='' className='footer-services line2'>Terms & Condition</div>
+            <div onClick={()=> {window.scrollTo({top: 0, behavior: 'smooth'}); navigate('/shipping')}} className='footer-services line2'>Shipping & Returns</div>
+            <div onClick={()=> {window.scrollTo({top: 0, behavior: 'smooth'}); navigate('privacy-policy')}} className='footer-services line2'>Privacy & Policy</div>
+            <div onClick= {()=> {window.scrollTo({top: 0, behavior: 'smooth'}); navigate('international-shipping')}} className='footer-services line2'>Internation Shipping</div>
+            <div onClick={()=> {window.scrollTo({top:0, behavior: 'smooth'}); navigate('/faq')}} className='footer-services line2'>FAQs & Support</div>
+            <div onClick={()=> {window.scrollTo({top: 0, behavior: 'smooth'}); navigate('/terms-condition')}} className='footer-services line2'>Terms & Condition</div>
           </div>
         </div>
         <div className='footer-container-2'>

@@ -19,6 +19,8 @@ import Men from '../assets/Category/men.webp'
 import Pendant from '../assets/Category/pendant.jpg'
 import Personolised from '../assets/Category/personolised.webp';
 import Set from '../assets/Category/sets_pink.webp'
+import Profile from '../assets/Jewellery/33395.jpg'
+import Star from '../assets/Jewellery/star.png'
 
 const HeroSection = () => {
   const { addWishlist, addTocart } = useCart()
@@ -178,6 +180,79 @@ const HeroSection = () => {
             ))}
           </div>
         </div>
+
+        {/*  */}
+        {/*  our client stories */}
+
+         {/*  testimonial */}
+         <div className=' pd-top'>
+                    <p className='center para-6  '>Our Client <span >Story</span></p>
+                    <div className='testimonial checkbox-flex pd-top'>
+                        <div className=''>
+                            <div className='test-1'>
+                                <div className='img-profile checkbox-flex'>
+                                    <img src={Profile} className='profile-size-1' />
+                                    <div className=''>
+                                        <p>Vipin Kumar</p>
+                                        <p>Software Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='test-2'>
+                                <div className='rating'>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                </div>
+                                <p className='para3 mt-1'>
+                                    Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.</p>
+                            </div>
+                        </div>
+                        <div className=''>
+                            <div className='test-1'>
+                                <div className='img-profile checkbox-flex'>
+                                    <img src={Profile} className='profile-size-1' />
+                                    <div className=''>
+                                        <p>Vipin Kumar</p>
+                                        <p>Software Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='test-2'>
+                                <div className='rating'>
+                                <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                </div>
+                                <p className='para3 mt-1'>
+                                    Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.										</p>
+                            </div>
+                        </div>
+                        <div className=''>
+                            <div className='test-1'>
+                                <div className='img-profile checkbox-flex'>
+                                    <img src={Profile} className='profile-size-1' />
+                                    <div className=''>
+                                        <p>Vipin Kumar</p>
+                                        <p>Software Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='test-2'>
+                                <div className='rating'>
+                                <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                  <img src={Star} style={{width: '15px'}}/>
+                                </div>
+                                <p className='para3 mt-1'>
+                                    Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.										</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
       </div>
       <ToastContainer />
     </div>

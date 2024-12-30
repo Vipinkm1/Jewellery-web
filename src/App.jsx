@@ -15,6 +15,11 @@ import Wishlist from './component/pages/Wishlist'
 import { CartProvider } from './component/Context/Context'
 import Cart from './component/pages/Cart'
 import ProductDetail from './component/pages/ProductDetail'
+import Shiping from './component/pages/Information/Shiping'
+import Privacy from './component/pages/Information/Privacy'
+import Internation from './component/pages/Information/Internation'
+import TermCondition from './component/pages/Information/TermCondition'
+import Faq from './component/pages/Information/Faq'
 function App() {
   return (
     <>
@@ -34,6 +39,11 @@ function App() {
           <Route path='/wishlist' element={<Wishlist/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path = '/product-detail' element={<ProductDetail/>}/>
+          <Route path = '/shipping' element={<Shiping/>}/>
+          <Route path='/privacy-policy' element={<Privacy/>}/>
+          <Route path='/international-shipping' element={<Internation/>}/>
+          <Route path='terms-condition' element={<TermCondition/>}/>
+          <Route path='faq' element={<Faq/>}/>
         </Routes>
         </Layout>
       </BrowserRouter>

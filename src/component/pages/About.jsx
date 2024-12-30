@@ -2,8 +2,17 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className=' bg'>
-        Hello this is about page
+    <div className=' page'>
+      <div className='center heading-1'>
+        About Us
+      </div>
+      <div className='para3 mt-2'>
+        Started in 2024, Simmu is India's largest fashion jewellery destination with a robust online presence and an expansive retail footprint of 20+ stores across India. Simmu has successfully introduced the concept of high quality, flawlessly crafted jewellery at affordable price points – a feat that remains unmatched in an increasingly busy segment.
+        <br /><br />
+        We take pride in our commitment to rare and traditional art, crafts and narratives, creating contemporary accessories for its discerning patrons. Handcrafted masterpieces, affordable luxury, unique artistic jewellery from some of the finest designers in the country are now at your fingertips with Simmu.
+        <br /> <br />
+        The only brand with a versatile line of jewellery, perfect sartorial companions to every woman and man. Created by a team of exceptional designers, crafts people and connoisseurs of style, Simmu features jewellery for those who know their style from fashion fads and are willing to spark a trend rather than just follow it. Each piece of jewellery has been crafted exclusively for Simmu, with its outstanding karigari and lyrical aesthetic. Not just the exquisite jewellery, the prices too will add a sparkle to your smile.
+      </div>
     </div>
   )
 }

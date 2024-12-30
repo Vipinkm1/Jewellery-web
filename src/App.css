@@ -649,6 +649,69 @@ font-weight: 600;
   color: red;
   cursor: pointer;
 }
+/*  filter page  */
+
+.filter-page{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.select-width{
+  width: 200px;
+  padding: 5px;
+}
+/*   hero section -1*/
+
+.testimonial{
+  display: block;
+}
+.topex-2{
+  margin-top: 70px;
+}
+.test-1{
+  width:  60%;
+  border-color: 2px solid bisque;
+  border-radius:  100px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+.profile-size-1{
+  width: 100px;;
+  border-radius: 50%
+}
+.test-2{
+  width: 100%;
+  padding: 40px;
+  margin-top: -50px;
+  border-radius: 3px;
+  background-color: #f5d7d7;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.rating{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+}
+.checkbox-flex{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+
+/* information */
+
+
+
+/*  about us */
+.heading-1{
+ font-size: 30px;
+ font-weight: 600;
+ font-family: 'oswald', sans-serif;
+
+}
 /*  footer section css */
 .footer {
   width: 100%;
