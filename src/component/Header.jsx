@@ -56,7 +56,7 @@ const Header = () => {
                     <CiSearch className='search-icon' />
                 </div>
                 <div className='nav-item'>
-                    <div className='center'>
+                    <div className='center' onClick={()=> {window.scrollTo({top: 0, behavior: 'smooth' }); navigate('/blogs')}}>
                         <MdStorefront className='nav-icon-size' />
                         <p className='para1 '>Blog</p>
                     </div>

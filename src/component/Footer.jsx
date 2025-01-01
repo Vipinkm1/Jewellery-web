@@ -24,9 +24,9 @@ const Footer = () => {
           <h2 className='heading    font'>Quick Links</h2>
           <div className='some-content'>
             <div  onClick={()=> { window.scrollTo({top: 0, behavior: 'smooth'}); navigate('/about-us')}} className='footer-services line2'>About Us</div>
-            <Link to='/blogs' className='footer-services line2'>Blogs</Link>
+            <div  onClick={()=> {window.scrollTo({top: 0, behavior:  'smooth'}); navigate('/blogs')}} className='footer-services line2'>Blogs</div>
             <Link to='/join-us' className='footer-services line2'>Join Us</Link>
-            <Link to='/contact' className='footer-services line2'>Contact Us</Link>
+            <div  onClick={()=> {window.scrollTo({top: 0, behavior:'smooth'}); navigate('/contact')}} className='footer-services line2'>Contact Us</div>
             <Link to='/customer-review' className='footer-services line2'>Customer Review</Link>
           </div>
         </div>

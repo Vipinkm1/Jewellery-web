@@ -20,6 +20,7 @@ import Privacy from './component/pages/Information/Privacy'
 import Internation from './component/pages/Information/Internation'
 import TermCondition from './component/pages/Information/TermCondition'
 import Faq from './component/pages/Information/Faq'
+import BlogDetail from './component/pages/BlogDetail'
 function App() {
   return (
     <>
@@ -44,6 +45,7 @@ function App() {
           <Route path='/international-shipping' element={<Internation/>}/>
           <Route path='terms-condition' element={<TermCondition/>}/>
           <Route path='faq' element={<Faq/>}/>
+          <Route path='blog-detail' element={<BlogDetail/>}/>
         </Routes>
         </Layout>
       </BrowserRouter>
