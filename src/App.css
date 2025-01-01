@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 40px;
+  padding: 0px 40px;
 }
 .navbar.scrolled {
 /* Changes background color when scrolled */
@@ -130,7 +130,7 @@ input::placeholder{
   align-items: center;
   justify-content: center;
   gap: 30px;
-  padding: 10px 0px;
+  padding: 0px 0px 10px 0px;
 }
 .dropdown-menu{
   border: 1px solid #dad7d7;
@@ -463,6 +463,11 @@ align-items: center;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #dad7d7 ;
+ }
+ /*  logo */
+
+ .jwele-logo{
+  width: 150px;
  }
  .checkout-btn{
   padding: 10px;

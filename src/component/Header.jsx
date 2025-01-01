@@ -7,6 +7,7 @@ import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from './Context/Context';
+import Logo from '../assets/Jewellery/logo.png'
 
 
 const Header = () => {
@@ -50,7 +51,7 @@ const Header = () => {
     return (
         <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className='navbar-container-1'>
-                <h2 onClick={handlehome} className='logo'>Simmu</h2>
+                <img src={Logo} onClick={handlehome} className='logo jwele-logo'/>
                 <div className='input-element'>
                     <input type='search' className='input-width' placeholder='Search for Gold jewellery Diamond jewellery and more... ' />
                     <CiSearch className='search-icon' />
