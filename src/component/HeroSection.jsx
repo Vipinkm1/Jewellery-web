@@ -94,7 +94,6 @@ const HeroSection = () => {
     { id: 8, link: Personolised, catName: 'Personolised' },
     { id: 9, link: Set, catName: 'Set' },
   ]
-
   const Client = [
     {id: 1, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' },
     {id: 2, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' },
