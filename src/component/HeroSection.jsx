@@ -21,6 +21,9 @@ import Personolised from '../assets/Category/personolised.webp';
 import Set from '../assets/Category/sets_pink.webp'
 import Profile from '../assets/Jewellery/33395.jpg'
 import Star from '../assets/Jewellery/star.png'
+import Har from '../assets/Jewellery/har.jpg'
+import Har1 from '../assets/Jewellery/har1.jpg'
+import Kangan from '../assets/Jewellery/kangan.jpg'
 
 const HeroSection = () => {
   const { addWishlist, addTocart } = useCart()
@@ -48,12 +51,23 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: true
   }
+  // our client
+  // const slider3Settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 2000,
+  //   arrows: false
+  // }
 
   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
-    { id: 2, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
-    { id: 3, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
-    { id: 4, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
+    { id: 2, img: Har, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
+    { id: 3, img: Har1, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
+    { id: 4, img: Kangan, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
   ]
   const banner = [
     { id: 11, name: 'https://battulaaljewels.com/website/images/product-banner.webp' },
@@ -80,6 +94,13 @@ const HeroSection = () => {
     { id: 8, link: Personolised, catName: 'Personolised' },
     { id: 9, link: Set, catName: 'Set' },
   ]
+
+  const Client = [
+    {id: 1, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' },
+    {id: 2, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' },
+    {id: 3, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' }
+  ]
+
   //  add wishlist
   const handleAddWishlist = (product) => {
     //  get the existing wishlist prduct from the localStorage 
@@ -141,8 +162,11 @@ const HeroSection = () => {
         </div>
         {/* Recommended category */}
         <div className='product pd-top'>
-          <p className='center para-6'>Recommended For You</p>
-          <div className='product-flex  pd-top-1'>
+        <div className='title-flex'>
+          <p className='para5'>Recommended For You</p>
+          <p className='para5'>View All</p>
+          </div>
+          <div className='product-flex  '>
             {productCart.map((product) => (
               <div className='product-container' key={product.id}>
                 <img
@@ -167,8 +191,11 @@ const HeroSection = () => {
         </div>
         {/* another recommended */}
         <div className='product pd-top'>
-          <p className='center para-6'>Recommended For You</p>
-          <div className='product-flex  pd-top-1'>
+        <div className='title-flex'>
+          <p className='para5'>Recommended For You</p>
+          <p className='para5'>View All</p>
+          </div>
+          <div className='product-flex  '>
             {productCart.map((product) => (
               <div className='product-container' key={product.id}>
                 <img className='img-width-4' src={product.img} onClick={() => navigate('/product-detail')} />
@@ -187,14 +214,16 @@ const HeroSection = () => {
          {/*  testimonial */}
          <div className=' pd-top'>
                     <p className='center para-6  '>Our Client <span >Story</span></p>
-                    <div className='testimonial checkbox-flex pd-top'>
-                        <div className=''>
+                    <div className='testimonial checkbox-flex '>
+                   {/* <Slider {...slider3Settings}> */}
+                    {Client.map((item)=> (
+                        <div className=' mt-2'>
                             <div className='test-1'>
                                 <div className='img-profile checkbox-flex'>
                                     <img src={Profile} className='profile-size-1' />
                                     <div className=''>
-                                        <p>Vipin Kumar</p>
-                                        <p>Software Developer</p>
+                                        <p>{item.name}</p>
+                                        <p>{item.location}</p>
                                     </div>
                                 </div>
                             </div>
@@ -206,52 +235,14 @@ const HeroSection = () => {
                                   <img src={Star} style={{width: '15px'}}/>
                                 </div>
                                 <p className='para3 mt-1'>
-                                    Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.</p>
+                                   {item.description}</p>
                             </div>
+                           
                         </div>
-                        <div className=''>
-                            <div className='test-1'>
-                                <div className='img-profile checkbox-flex'>
-                                    <img src={Profile} className='profile-size-1' />
-                                    <div className=''>
-                                        <p>Vipin Kumar</p>
-                                        <p>Software Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='test-2'>
-                                <div className='rating'>
-                                <img src={Star} style={{width: '15px'}}/>
-                                  <img src={Star} style={{width: '15px'}}/>
-                                  <img src={Star} style={{width: '15px'}}/>
-                                  <img src={Star} style={{width: '15px'}}/>
-                                </div>
-                                <p className='para3 mt-1'>
-                                    Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.										</p>
-                            </div>
-                        </div>
-                        <div className=''>
-                            <div className='test-1'>
-                                <div className='img-profile checkbox-flex'>
-                                    <img src={Profile} className='profile-size-1' />
-                                    <div className=''>
-                                        <p>Vipin Kumar</p>
-                                        <p>Software Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='test-2'>
-                                <div className='rating'>
-                                <img src={Star} style={{width: '15px'}}/>
-                                  <img src={Star} style={{width: '15px'}}/>
-                                  <img src={Star} style={{width: '15px'}}/>
-                                  <img src={Star} style={{width: '15px'}}/>
-                                </div>
-                                <p className='para3 mt-1'>
-                                    Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.										</p>
-                            </div>
-                        </div>
+                      ))}
+                      {/* </Slider> */}
                     </div>
+                 
                 </div>
       </div>
       <ToastContainer />

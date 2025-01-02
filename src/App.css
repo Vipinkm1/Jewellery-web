@@ -31,10 +31,10 @@
    gap: 20px;
 }
 .logo{
-  font-size: 30px;
+  /* font-size: 30px;
   font-style: oblique;
   font-family: 'oswald', 'Times New Roman', Times, serif;
-  cursor: pointer;
+  cursor: pointer; */
 }
 .center{
   text-align: center;
@@ -58,6 +58,7 @@
 }
 .input-element{
   display: flex;
+  
   align-items: center;
   justify-content: end;
   width: 50%;
@@ -187,7 +188,6 @@ input::placeholder{
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 10px;
 }
 .product-flex-1{
@@ -469,6 +469,10 @@ align-items: center;
  .jwele-logo{
   width: 150px;
  }
+ .jwele-logo-1{
+  width: 100px;
+  margin-left: -30px;
+ }
  .checkout-btn{
   padding: 10px;
   width: 100%;
@@ -492,6 +496,40 @@ align-items: center;
    padding: 10px;
    width: 30%;
    outline: none;
+ }
+ .blog-detail-width{
+  width: 75%;
+ }
+ .blog-title{
+  font-size: 30px ;
+  font-weight: 600;
+  font-family: 'oswald', 'Times New Roman', Times, serif;
+ }
+ .blog-detail-width-1{
+
+  width: 25%;
+
+ }
+ .blog-border{
+  border: 1px solid #dad7d7;
+
+ }
+ .blog-detail-grid{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+ }
+ .blog-img-width{
+  width: 100%;
+  height: 600px;
+
+ }
+ .blog-detail-flex{
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  
  }
  .blog-grid{
   display: grid;

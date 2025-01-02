@@ -59,27 +59,27 @@ const Header = () => {
                 <div className='nav-item'>
                     <div className='center' onClick={()=> {window.scrollTo({top: 0, behavior: 'smooth' }); navigate('/blogs')}}>
                         <MdStorefront className='nav-icon-size' />
-                        <p className='para1 '>Blog</p>
+                        <p className='para3 '>Blog</p>
                     </div>
                     <Link to={'/signup'} className='center anchor'>
                         <VscAccount className='nav-icon-size' />
-                        <p className='para1'>{user?.fullname || 'Account'}</p>
+                        <p className='para3'>{user?.fullname || 'Account'}</p>
                     </Link>
                     <Link to={'/wishlist'} className='center anchor'>
                         <VscHeart className='nav-icon-size' />
                         {getTotalWishlist() > 0 && <span className='cart-count'>{getTotalWishlist()}</span>}
-                        <p className='para1'>Wishlist</p>
+                        <p className='para3'>Wishlist</p>
                     </Link>
                     <Link to={'/cart'} className='center anchor'>
                         <BsCart2 className='nav-icon-size' />
                         {getTotalCart() > 0 && <span className='cart-count-1'>{getTotalCart()}</span>}
-                        <p className='para1'>Cart</p>
+                        <p className='para3'>Cart</p>
                     </Link>
                 </div>
             </div>
             <div className='next-nav'>
                 <div className='flex-1'>
-                    <div className='para2 line ' onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter} onClick={handleOpen}>Shop by Categories
+                    <div className='para3 line ' onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter} onClick={handleOpen}>Shop by Categories
                         <div className='category-border'>
                             {dropDownVisible && (
                                 <div className="dropdown-menu">
@@ -97,7 +97,7 @@ const Header = () => {
                     <RiArrowDropDownLine className='size-1' />
                 </div>
                 <div className=''>
-                    <Link to='/filter' className='para2 anchor line' onClick={() => setMens(true)} onMouseEnter={() => setMens(true)} onMouseLeave={() => setMens(false)}>Men's Jewellery
+                    <Link to='/filter' className='para3 anchor line' onClick={() => setMens(true)} onMouseEnter={() => setMens(true)} onMouseLeave={() => setMens(false)}>Men's Jewellery
                         <div className='category-border'>
                             {mens && (
                                 <div className="dropdown-menu">
@@ -114,7 +114,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className=''>
-                    <Link to='/filter' className='para2 line anchor' onClick={() => setWomen(true)} onMouseEnter={() => setWomen(true)} onMouseLeave={() => setWomen(false)} >Women Jewellery
+                    <Link to='/filter' className='para3 line anchor' onClick={() => setWomen(true)} onMouseEnter={() => setWomen(true)} onMouseLeave={() => setWomen(false)} >Women Jewellery
                         <div className='category-border'>
                             {women && (
                                 <div className="dropdown-menu">
@@ -136,13 +136,13 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className=''>
-                    <Link to='/filter' className='para2 line anchor'>Latest Collection</Link>
+                    <Link to='/filter' className='para3 line anchor'>Latest Collection</Link>
                 </div>
                 <div className=''>
-                    <Link to='/filter' className='para2 line anchor'>Gift Stores</Link>
+                    <Link to='/filter' className='para3 line anchor'>Gift Stores</Link>
                 </div>
                 <div className=''>
-                    <Link to='/filter' className='para2 line anchor'>More at Simmu</Link>
+                    <Link to='/filter' className='para3 line anchor'>More at Simmu</Link>
                 </div>
             </div>
         </div>

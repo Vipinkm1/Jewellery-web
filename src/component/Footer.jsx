@@ -7,6 +7,7 @@ import Youtube from '../assets/Social/youtube.png'
 import { MdEmail, MdPhone } from 'react-icons/md'
 import { GrLocation } from "react-icons/gr";
 import { Link, useNavigate } from 'react-router-dom'
+import Logo from '../assets/Jewellery/logo.png'
 const Footer = () => {
 
   const navigate = useNavigate()
@@ -15,8 +16,8 @@ const Footer = () => {
       <div className='footer-flex '>
         <div className='footer-container-1'>
           <h2 className='heading  footer-heading'>Why Us</h2>
-          <div className='some-content'>
-            <h1 className='logo'>Jewellery</h1>
+          <div className=''>
+            <img src={Logo } className='jwele-logo-1'/>
             <p className='para3'>Simmu is a fine jewellery brand of silver, gold and lab grown diamonds. We have grown to be the largest D2C jewellery brand in India that has gained people’s trust as a go-to choice for gifting. </p>
           </div>
         </div>
