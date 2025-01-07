@@ -19,7 +19,7 @@ const Header = () => {
     const navigate = useNavigate()
     const handlehome = () => {
         navigate('/')
-        window.scrollTo({top: 0, behavior: 'smooth'})
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
     const handleOpen = () => {
         setDropDownVisible(true)
@@ -51,13 +51,13 @@ const Header = () => {
     return (
         <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className='navbar-container-1'>
-                <img src={Logo} onClick={handlehome} className='logo jwele-logo'/>
+                <img src={Logo} onClick={handlehome} className='logo jwele-logo' />
                 <div className='input-element'>
                     <input type='search' className='input-width' placeholder='Search for Gold jewellery Diamond jewellery and more... ' />
                     <CiSearch className='search-icon' />
                 </div>
                 <div className='nav-item'>
-                    <div className='center' onClick={()=> {window.scrollTo({top: 0, behavior: 'smooth' }); navigate('/blogs')}}>
+                    <div className='center' onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/blogs') }}>
                         <MdStorefront className='nav-icon-size' />
                         <p className='para3 '>Blog</p>
                     </div>

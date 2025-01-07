@@ -21,13 +21,16 @@ import Har1 from '../../assets/Jewellery/har.jpg'
 import Har2 from '../../assets/Jewellery/har1.jpg'
 
 const ProductDetail = () => {
-  const { addWishlist, addTocart } = useCart()
+  //  call the product detail
+
+
+  const { addWishlist, addTocart, productDetail } = useCart()
   const [open, setOpen] = useState(false)
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
 
   //  image change
-  const [mainImage, setMainImage] = useState(Jwellery)
+  const [mainImage, setMainImage] = useState(productDetail?.img || '')
 
   const navigate = useNavigate()
   const productCart = [
@@ -84,28 +87,28 @@ const ProductDetail = () => {
           }} />
           <div className='product-flex-1 mt-1 '>
             <div className='p-1'>
-              <img src={Kangana} className='product-img' onClick={() => setMainImage(Kangana)} />
+              <img src={productDetail.img} className='product-img' onClick={() => setMainImage(productDetail.img)} />
             </div>
             <div className='p-1'>
-              <img src={Har1} className='product-img' onClick={() => setMainImage(Har1)} />
+              <img src={productDetail.img} className='product-img' onClick={() => setMainImage(productDetail.img)} />
             </div>
             <div className='p-1'>
-              <img src={Har2} className='product-img' onClick={() => setMainImage(Har2)} />
+              <img src={productDetail.img} className='product-img' onClick={() => setMainImage(productDetail.img)} />
             </div>
             <div className='p-1'>
-              <img src={Jwellery} className='product-img' onClick={() => setMainImage(Jwellery)} />
+              <img src={productDetail.img} className='product-img' onClick={() => setMainImage(productDetail.img)} />
             </div>
           </div>
         </div>
         <div className='product-border-2'>
           <div className=''>
             <div className='title-flex'>
-              <p className='para-6'>The ring of the lord</p>
+              <p className='para-6'>{productDetail?.title}</p>
               <VscShare className='share-icon' />
             </div>
             <div className='footer-flex-3 mt-1'>
-              <p className='para-6'><span className=''></span>$4554</p>
-              <p className='overline'>$0000</p>
+              <p className='para-6'><span className=''></span>{productDetail.symbol}{productDetail.Prize}</p>
+              <p className='overline'>{productDetail?.symbol}{productDetail?.discountPrize}</p>
               <p>Inc. of all taxes</p>
             </div>
             <div className='rating-flex mt-1'>

@@ -10,6 +10,7 @@ const Context = createContext();
 export const  CartProvider = ({children}) => {
   const [wishlist, setWishlist] = useState([])
   const [cart, setCart] = useState([])
+  const [productDetail, setProductDetail] = useState(null)
 //    add to fuction 
 const addWishlist = (product) => {
     setWishlist([...wishlist, product])
@@ -34,8 +35,11 @@ const removeCart = (index) => {
     const deleteCart = cart.filter((_, i) => i !== index)
     setCart(deleteCart)
 }
+const ShowDetail = (product)=> {
+    setProductDetail(product)
+}
 return (
-    <Context.Provider value={{wishlist,cart, addWishlist, removeWishlist, getTotalWishlist, addTocart, getTotalCart, removeCart}}>
+    <Context.Provider value={{productDetail, wishlist,cart, addWishlist, removeWishlist, getTotalWishlist, addTocart, getTotalCart, removeCart, ShowDetail}}>
         {children}
     </Context.Provider>
 )

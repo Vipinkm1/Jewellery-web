@@ -407,7 +407,7 @@ align-items: center;
   object-fit: cover;
  }
  .cart-img-width{
-  width: 80px;
+  width: 120px;
   border-radius: 10px;
  }
  .cart-container-1{
@@ -468,6 +468,7 @@ align-items: center;
 
  .jwele-logo{
   width: 150px;
+  cursor: pointer;
  }
  .jwele-logo-1{
   width: 100px;

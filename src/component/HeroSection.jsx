@@ -26,7 +26,7 @@ import Har1 from '../assets/Jewellery/har1.jpg'
 import Kangan from '../assets/Jewellery/kangan.jpg'
 
 const HeroSection = () => {
-  const { addWishlist, addTocart } = useCart()
+  const { addWishlist, addTocart, ShowDetail } = useCart()
   const navigate = useNavigate()
   //  change the image
   //  banner 
@@ -51,18 +51,7 @@ const HeroSection = () => {
     autoplaySpeed: 2000,
     arrows: true
   }
-  // our client
-  // const slider3Settings = {
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 2000,
-  //   arrows: false
-  // }
-
+ 
   const productCart = [
     { id: 1, img: ProductRing, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
     { id: 2, img: Har, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -95,7 +84,7 @@ const HeroSection = () => {
     { id: 9, link: Set, catName: 'Set' },
   ]
   const Client = [
-    {id: 1, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' },
+    {id: 1, img: 'https://www.istockphoto.com/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-gm1437816897-478501891' , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' },
     {id: 2, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' },
     {id: 3, img: Profile , name: 'Vipin Kumar', location: 'Delhi,India', description: ' Infetech is a professional IT Company that always creates quality software for clients. If you are looking for a team of talent developers to find out the best IT solutions, Infetech is a company that your team should consider.' }
   ]
@@ -128,6 +117,13 @@ const HeroSection = () => {
     console.log("producttocart", product)
 
   }
+  //  product Detail
+   const handleProductDetail = (product)=> {
+      ShowDetail(product)
+      window.scrollTo({top: 0, behavior: 'smooth'})
+      navigate('/product-detail')
+      console.log(product)
+   }
   return (
     <div className='banner-section'>
       <div className=' flex-2'>
@@ -171,10 +167,7 @@ const HeroSection = () => {
                 <img
                   className="img-width-4"
                   src={product.img}
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolls to the top smoothly
-                    navigate('/product-detail'); // Navigates to the product detail page
-                  }}
+                  onClick={()=> handleProductDetail(product)}
                 />
                 <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
                 <p className='para2 bold-1 mt-1'><span className=''>{product.symbol}</span>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
@@ -206,13 +199,10 @@ const HeroSection = () => {
             ))}
           </div>
         </div>
-
-        {/*  */}
         {/*  our client stories */}
-
          {/*  testimonial */}
          <div className=' pd-top'>
-                    <p className='center para-6  '>Our Client <span >Story</span></p>
+                    <p className='center heading  '>Our Client <span >Story</span></p>
                     <div className='testimonial checkbox-flex '>
                    {/* <Slider {...slider3Settings}> */}
                     {Client.map((item)=> (
