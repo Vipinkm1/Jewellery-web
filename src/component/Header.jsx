@@ -129,7 +129,6 @@ const Header = () => {
                                     <div className="dropdown-item">Anklets</div>
                                     <div className="dropdown-item">Mangalsutras</div>
                                     <div className="dropdown-item">Pendants</div>
-
                                 </div>
                             )}
                         </div>

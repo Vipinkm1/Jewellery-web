@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Har from '../../assets/Jewellery/har.jpg'
 import Har1 from '../../assets/Jewellery/har1.jpg'
 import Kangan from '../../assets/Jewellery/kangan.jpg'
@@ -6,6 +6,12 @@ import { CiHeart } from "react-icons/ci";
 
 
 const FilterPage = () => {
+  const [productType, setProductType] = useState(false)
+  const [shopFor, setShopFor]= useState(false)
+
+  const handleClose = ()=> {
+    setProductType(false)
+  }
   const productCart = [
     { id: 1, img: Kangan, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
     { id: 2, img: Har, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -15,45 +21,81 @@ const FilterPage = () => {
   return (
     <div className='page'>
       <div className='filter-page'>
-        <div className=''>
-          <select className='select-width'>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-          </select>
+        <div className='filter-border-right' >
+          <div className='para3' onClick={() => setProductType((prevState)=> !prevState)} >Product Type</div>
+          <div className='filterOpenContainer-1'>
+            {productType && (
+              <div className='filterOpenContainer'>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Earerings</p>
+                  </div>
+                  <p>(8)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Earerings</p>
+                  </div>
+                  <p>(8)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Earerings</p>
+                  </div>
+                  <p>(8)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Earerings</p>
+                  </div>
+                  <p>(8)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Earerings</p>
+                  </div>
+                  <p>(8)</p>
+                </div>
+
+              </div>
+            )}
+          </div>
         </div>
-        <div className=''>
-          <select className='select-width'>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-          </select>
+        <div className='filter-border-right'>
+          <div className='para3'>Price</div>
         </div>
-        <div >
-          <select className='select-width'>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-          </select>
+        <div className='filter-border-right'>
+          <div className='para3'onClick={()=> setShopFor((prevState)=> !prevState)} >Shop For</div>
+           <div className='filterOpenContainer-1'>
+            {shopFor && (
+              <div className='filterOpenContainer'>
+                
+              </div>
+            )}
+           </div>
         </div>
-        <div >
-          <select className='select-width'>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-          </select>
+        <div className='filter-border-right'>
+          <p className='para3 '> Color</p>
         </div>
-        <div className=''>
-          <select className='select-width'>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-            <option>1</option>
-          </select>
+        <div className='filter-border-right'>
+          <p className='para3'>Metal</p>
+        </div>
+        <div className='filter-border-right'>
+          <p className='para3'>Stone</p>
+        </div>
+        <div className='filter-border-right'>
+          <p className='para3'>Style</p>
+        </div>
+        <div className='filter-border-right'>
+          <p className='para3'>Sub Category</p>
+        </div>
+        <div className='filter-border-right'>
+          <p className='para3'>Sorted By</p>
         </div>
       </div>
       <div className='product-flex  '>
