@@ -739,11 +739,12 @@ font-weight: 600;
 .filterOpenContainer {
   width: 200px;
   border: 1px solid #dad7d7;
+  border-radius: 5px;
   height: auto;
   position: absolute;
-  margin-top: 14px;
+  margin-top: 20px;
   z-index: 1;
-  background-color: #fff;
+  background-color: #f6eded ;
   padding: 10px;
   left: 50%; /* Center horizontally relative to the parent */
   transform: translateX(-50%); /* Adjust position to truly center */
@@ -756,6 +757,25 @@ font-weight: 600;
   width: 100%;
   padding: 5px;
  }
+ /* faq box container */
+ .faq-box{
+  border: 2px solid #dad7d7;
+  background-color: #f6eded ;
+  padding: 20px ;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+ .faq-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+ }
+
+
 /*   hero section -1*/
 
 .testimonial{

@@ -7,9 +7,12 @@ import { CiHeart } from "react-icons/ci";
 
 const FilterPage = () => {
   const [productType, setProductType] = useState(false)
-  const [shopFor, setShopFor]= useState(false)
+  const [shopFor, setShopFor] = useState(false)
+  const [color, setColor] = useState(false)
+  const [stone, setStone] = useState(false)
+  const [style, setStyle] = useState(false)
 
-  const handleClose = ()=> {
+  const handleClose = () => {
     setProductType(false)
   }
   const productCart = [
@@ -22,46 +25,45 @@ const FilterPage = () => {
     <div className='page'>
       <div className='filter-page'>
         <div className='filter-border-right' >
-          <div className='para3' onClick={() => setProductType((prevState)=> !prevState)} >Product Type</div>
+          <div className='para3' onClick={() => setProductType((prevState) => !prevState)} >Product Type</div>
           <div className='filterOpenContainer-1'>
             {productType && (
               <div className='filterOpenContainer'>
                 <div className='filter-product-flex-1'>
                   <div className='checkbox-flex'>
-                    <input type='checkbox' />
-                    <p>Earerings</p>
+                    <input type='checkbox' className='checkbox-size' />
+                    <p>Earrings</p>
                   </div>
                   <p>(8)</p>
                 </div>
                 <div className='filter-product-flex-1'>
                   <div className='checkbox-flex'>
                     <input type='checkbox' />
-                    <p>Earerings</p>
+                    <p>Gold Braclets</p>
                   </div>
-                  <p>(8)</p>
+                  <p>(16)</p>
                 </div>
                 <div className='filter-product-flex-1'>
                   <div className='checkbox-flex'>
                     <input type='checkbox' />
-                    <p>Earerings</p>
+                    <p>Gold Necklets</p>
                   </div>
-                  <p>(8)</p>
+                  <p>(32)</p>
                 </div>
                 <div className='filter-product-flex-1'>
                   <div className='checkbox-flex'>
                     <input type='checkbox' />
-                    <p>Earerings</p>
+                    <p>Manglasutra</p>
                   </div>
-                  <p>(8)</p>
+                  <p>(64)</p>
                 </div>
                 <div className='filter-product-flex-1'>
                   <div className='checkbox-flex'>
                     <input type='checkbox' />
-                    <p>Earerings</p>
+                    <p>Gold Rings</p>
                   </div>
-                  <p>(8)</p>
+                  <p>(128)</p>
                 </div>
-
               </div>
             )}
           </div>
@@ -70,26 +72,131 @@ const FilterPage = () => {
           <div className='para3'>Price</div>
         </div>
         <div className='filter-border-right'>
-          <div className='para3'onClick={()=> setShopFor((prevState)=> !prevState)} >Shop For</div>
-           <div className='filterOpenContainer-1'>
+          <div className='para3' onClick={() => setShopFor((prevState) => !prevState)} >Shop For</div>
+          <div className='filterOpenContainer-1'>
             {shopFor && (
               <div className='filterOpenContainer'>
-                
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Women</p>
+                  </div>
+                  <p>(128)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Men</p>
+                  </div>
+                  <p>(206)</p>
+                </div>
               </div>
             )}
-           </div>
+          </div>
         </div>
         <div className='filter-border-right'>
-          <p className='para3 '> Color</p>
+          <div className='para3' onClick={() => setColor((prevState) => !prevState)}>Color</div>
+          <div className='filterOpenContainer-1'>
+            {color && (
+              <div className='filterOpenContainer'>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Silver</p>
+                  </div>
+                  <p>(7)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Gold</p>
+                  </div>
+                  <p>(8)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Whilte Gold</p>
+                  </div>
+                  <p>(1)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Rose Gold</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
         <div className='filter-border-right'>
-          <p className='para3'>Metal</p>
+          <div className='para3' onClick={() => setStone((prevState) => !prevState)}>Stone</div>
+          <div className='filterOpenContainer-1'>
+            {stone && (
+              <div className='filterOpenContainer'>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Pearl</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Diamond</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
         <div className='filter-border-right'>
-          <p className='para3'>Stone</p>
-        </div>
-        <div className='filter-border-right'>
-          <p className='para3'>Style</p>
+          <div className='para3' onClick={() => setStyle((prevState) => !prevState)}>Style</div>
+          <div className='filterOpenContainer-1'>
+            {style && (
+              <div className='filterOpenContainer'>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Office</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Everyday</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Gifted</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Party</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+                <div className='filter-product-flex-1'>
+                  <div className='checkbox-flex'>
+                    <input type='checkbox' />
+                    <p>Marriage</p>
+                  </div>
+                  <p>(138)</p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
         <div className='filter-border-right'>
           <p className='para3'>Sub Category</p>
@@ -123,8 +230,8 @@ const FilterPage = () => {
               className="img-width-4"
               src={product.img}
               onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolls to the top smoothly
-                navigate('/product-detail'); // Navigates to the product detail page
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                navigate('/product-detail');
               }}
             />
             <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
@@ -141,8 +248,8 @@ const FilterPage = () => {
               className="img-width-4"
               src={product.img}
               onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolls to the top smoothly
-                navigate('/product-detail'); // Navigates to the product detail page
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                navigate('/product-detail');
               }}
             />
             <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />

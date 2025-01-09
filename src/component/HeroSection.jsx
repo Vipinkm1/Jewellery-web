@@ -190,7 +190,7 @@ const HeroSection = () => {
           <div className='product-flex  '>
             {productCart.map((product) => (
               <div className='product-container' key={product.id}>
-                <img className='img-width-4' src={product.img} onClick={() => navigate('/product-detail')} />
+                <img className='img-width-4' src={product.img}    onClick={()=> handleProductDetail(product)} />
                 <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />
                 <p className='para2 bold-1 mt-1'><span className=''>{product.symbol}</span>{product.Prize} <span className='overline-sam'>{product.symbol}</span><span className='overline'>{product.discountPrize}</span></p>
                 <p className='para1 mt-1'>{product.title}</p>
