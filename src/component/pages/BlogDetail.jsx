@@ -1,8 +1,10 @@
 import React from 'react'
 import Kangan from '../../assets/Jewellery/kangan.jpg'
+import { useCart } from '../Context/Context'
 
 
 const BlogDetail = () => {
+  const {blogDetail} = useCart()
 
   const blogs = [
     {id: 1, img: 'https://bsmedia.business-standard.com/_media/bs/img/article/2024-12/31/full/1735667841-3825.jpg?im=FitAndFill=(803,452)', hours:'5 Min', title: 'Business Standard wishes all its read a very happy new year' , createdDate: '01/01/2025', decription: 'Business Standard extends its warmest wishes for a joyous and prosperous New Year to all its readers! May 2025 bring you success, happiness, and endless opportunities!'},
@@ -15,9 +17,9 @@ const BlogDetail = () => {
     <div className='page'>
       <div className='blog-detail-flex' >
         <div className='blog-detail-width'>
-         <div className='blog-title'>Business Standard wishes all its read a very happy new year</div>
-         <div className='createddate'>Posted Date: 12/11/2004</div>
-         <img src={Kangan} className='blog-img-width mt-1'/>
+         <div className='blog-title'>{blogDetail.title}</div>
+         <div className='createddate'>Posted Date:{blogDetail.createdDate}</div>
+         <img src={blogDetail.img} className='blog-img-width mt-1'/>
          <div className='mt-1 para3'>Business Standard extends its warmest wishes for a joyous and prosperous New Year to all its readers! May 2025 bring you success, happiness, and endless opportunities!</div>
          <img src={Kangan} className='blog-img-width mt-1'/>
          <div className='mt-1 para3'>Business Standard extends its warmest wishes for a joyous and prosperous New Year to all its readers! May 2025 bring you success, happiness, and endless opportunities!</div>

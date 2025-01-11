@@ -11,10 +11,30 @@ const FilterPage = () => {
   const [color, setColor] = useState(false)
   const [stone, setStone] = useState(false)
   const [style, setStyle] = useState(false)
+  const [priceOpen, setPriceOpen] = useState(false)
+  //  background fill 
+
+  const [maxValue, setMaxValue] = useState(200000)
+  const [minValue, setMinValue] = useState(0)
+  const sliderMax = 200000;
+
+  //  handle background fill 
+  const handleChangSlider = (e) => {
+    const setValue = Number(e.target.value);
+    if(setValue > setMinValue){
+      setMaxValue(setValue)
+    }
+    else{
+      setMinValue(setValue)
+    }
+  }
+
 
   const handleClose = () => {
     setProductType(false)
   }
+
+
   const productCart = [
     { id: 1, img: Kangan, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
     { id: 2, img: Har, title: 'The rings of the road', Prize: '4524', symbol: '$', discountPrize: '4528' },
@@ -69,7 +89,23 @@ const FilterPage = () => {
           </div>
         </div>
         <div className='filter-border-right'>
-          <div className='para3'>Price</div>
+          <div className='para3' onClick={()=> setPriceOpen((prevState) => !prevState)}>Price</div>
+          <div className='filterOpenContainer-1'>
+            {priceOpen && (
+              <div className='filterOpenContainer'>
+                <div className='checkbox-flex'>
+                  <input className='price-border' type='number' value={minValue} onChange={(e) => setMinValue(Number(e.target.value))} />
+                  <div>-</div>
+                   <input className='price-border' type='number' value={maxValue} onChange={(e) => setMaxValue(Number(e.target.value))}  />
+                </div>
+                <input className='mt-1' type='range' min={0} max={sliderMax} onChange={handleChangSlider} style={{width: '100%', cursor: 'pointer'}}/>
+                <div className='price-flex'>
+                  {/* <div>{minValue}</div>
+                  <div>{maxValue}</div> */}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
         <div className='filter-border-right'>
           <div className='para3' onClick={() => setShopFor((prevState) => !prevState)} >Shop For</div>
@@ -212,8 +248,8 @@ const FilterPage = () => {
               className="img-width-4"
               src={product.img}
               onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolls to the top smoothly
-                navigate('/product-detail'); // Navigates to the product detail page
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                navigate('/product-detail');
               }}
             />
             <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />

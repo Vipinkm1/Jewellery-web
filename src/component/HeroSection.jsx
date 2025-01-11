@@ -179,7 +179,7 @@ const HeroSection = () => {
         </div>
         {/*  banner 1 */}
         <div className='pd-top'>
-          <img className='img-width' src='https://battulaaljewels.com/website/images/product-banner.webp' />
+          <img className='img-width' src='https://listany-prod.s3.amazonaws.com/images/radhikajeweltech/kikjewelsbanner1920x650traditionalnecklacejewellery_1.png' />
         </div>
         {/* another recommended */}
         <div className='product pd-top'>
