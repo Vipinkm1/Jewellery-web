@@ -50,6 +50,3 @@ return (
 }
 
 
-
-//  Add to cart fuctionality
-
