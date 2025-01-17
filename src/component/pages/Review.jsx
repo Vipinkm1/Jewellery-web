@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ProductRing from '../../assets/Jewellery/jwe.jpg'
 import Har from '../../assets/Jewellery/har.jpg'
 import Har1 from '../../assets/Jewellery/har1.jpg'
-import Kangan from '../../assets/Jewellery/Kangan.jpg'
+import Kangan from '../../assets/Jewellery/kangan.jpg'
 import Profile from '../../assets/Jewellery/33395.jpg'
 import Star from '../../assets/Jewellery/star.png'
 import { RxCross2 } from "react-icons/rx";
