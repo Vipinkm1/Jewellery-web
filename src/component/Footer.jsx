@@ -12,6 +12,9 @@ const Footer = () => {
 
   const [location, setLocation] = useState(false)
 
+  const handleEmailOpen = () => {
+    window.location.href= `mailto: vipinkm1654@gmail.com`;
+  }
   const navigate = useNavigate()
   return (
     <>
@@ -80,7 +83,7 @@ const Footer = () => {
                   <p className=''>Address:</p>
                   <p>Dwarka Mor,New Delhi,India</p>
                 </div>
-                <div className='footer-contact'>
+                <div className='footer-contact' onClick={handleEmailOpen}>
                   <MdEmail className='icons-contact' />
                   <p className=''>Email: <span>itsvipinkmgmail.com</span></p>
                 </div>
