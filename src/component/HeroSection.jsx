@@ -66,10 +66,10 @@ const HeroSection = () => {
   ]
   const top = [
     { id: 1, name: 'ENGAGEMENT RINGS', photo: Rings },
-    { id: 2, name: 'STATEMENT EARINGS', photo: Rings },
-    { id: 3, name: 'BRIDESMAID NECKLACE', photo: Rings },
-    { id: 4, name: 'MODERN MANGALSUTRA', photo: Rings },
-    { id: 5, name: 'CUPPLE BANDS', photo: Rings },
+    { id: 2, name: 'STATEMENT EARINGS', photo: 'https://whitediamondsutah.com/cdn/shop/collections/engagement-rings-13.png?v=1718235345&width=2240' },
+    { id: 3, name: 'BRIDESMAID NECKLACE', photo: 'https://mirari.com/image/cache/catalog/pendent-banner-1280x400-1280x400.jpg' },
+    { id: 4, name: 'MODERN MANGALSUTRA', photo: 'https://media.vogue.in/wp-content/uploads/2021/12/504002YPYAAA32_1-1366x768.jpg' },
+    { id: 5, name: 'CUPPLE BANDS', photo: 'https://media.istockphoto.com/id/1201769038/video/wedding-gold-rings-roll-to-each-other-close-up-macro-shot.jpg?s=640x640&k=20&c=37idXQkiinhj6UmL7GWGut5fO8tM7WpjgMkuKs13ENg=' },
     { id: 6, name: 'ENGAGEMENT KIDS PARTYBEAR', photo: Rings },
   ]
   const category = [

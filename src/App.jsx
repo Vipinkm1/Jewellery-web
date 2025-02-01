@@ -21,6 +21,7 @@ import Internation from './component/pages/Information/Internation'
 import TermCondition from './component/pages/Information/TermCondition'
 import Faq from './component/pages/Information/Faq'
 import BlogDetail from './component/pages/BlogDetail'
+import Checkout from './component/pages/Checkout'
 function App() {
   return (
     <>
@@ -46,6 +47,7 @@ function App() {
           <Route path='terms-condition' element={<TermCondition/>}/>
           <Route path='faq' element={<Faq/>}/>
           <Route path='blog-detail' element={<BlogDetail/>}/>
+          <Route path='/checkout' element= {<Checkout/>}/>
         </Routes>
         </Layout>
       </BrowserRouter>

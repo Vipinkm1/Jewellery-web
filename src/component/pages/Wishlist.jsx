@@ -16,7 +16,7 @@ const Wishlist = () => {
     <div className='page'>
       <h1 className='center'>Your Wishlist</h1>
       {wishlist.length === 0 ? (
-        <p>Your wishlist is empty.</p>
+        <p className='center para5'>Your wishlist is empty.</p>
       ) : (
         <div className="product-flex pd-top">
           {wishlist.map((productWishlist, index) => (

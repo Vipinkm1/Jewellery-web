@@ -243,7 +243,7 @@ const ProductDetail = () => {
                 </div>
               </div>
               <div className='cart-flex mt-2'>
-                <button className='btn-width-2'>BUY PRODUCT</button>
+                <button className='btn-width-2' onClick={()=> {window.scrollTo({top: 0, behavior:'smooth'}); navigate('/checkout')}}>BUY PRODUCT</button>
                 <button className='btn-width-2'>ADD TO CART</button>
                 <button className='btn-width-2' onClick={() => setReviewBox(true)}>WRITE REVIEW</button>
               </div>

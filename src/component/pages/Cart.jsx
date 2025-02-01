@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 
 import { useCart } from '../Context/Context'
+import { useNavigate } from 'react-router-dom'
 const Cart = () => {
 
     const { cart, removeCart } = useCart()
+
+    const navigate = useNavigate()
 
     const [quantities, setQuantities] = useState(
         cart.map(() => 1)
@@ -44,7 +47,7 @@ const Cart = () => {
     return (
         <div className='page'>
             {cart.length === 0 ? (
-                <p>Your wishlist is empty.</p>
+                <p className='center para5'>Your wishlist is empty.</p>
             ) : (
                 <div className='cart-flex '>
                     <div className='cart-container-1'>
@@ -87,7 +90,7 @@ const Cart = () => {
                                 <div>${calculateFinalTotal()}</div>
                             </div>
                             <div className='pd-top-1 center'>
-                                <button className='checkout-btn'>Checkout</button>
+                                <button className='checkout-btn' onClick={()=> {window.scrollTo({top: 0, behavior: 'smooth'}); navigate('/checkout') }}>Checkout</button>
                             </div>
                         </div>
                     </div>
