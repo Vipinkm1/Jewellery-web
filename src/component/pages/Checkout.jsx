@@ -45,7 +45,7 @@ const Checkout = () => {
     const filteredCities = data
         .filter(item => item.subcountry === selectedState)
         .map(item => item.name);
-    
+    filteredCities.sort()
     setCities(filteredCities);
   };
 

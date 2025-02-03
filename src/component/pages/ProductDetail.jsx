@@ -27,7 +27,7 @@ const ProductDetail = () => {
   const [reviewBox, setReviewBox] = useState(false)
 
 
-  const { addWishlist, addTocart, productDetail } = useCart()
+  const { addWishlist, addTocart, productDetail, rightReview } = useCart()
   const [open, setOpen] = useState(false)
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
@@ -73,17 +73,33 @@ const ProductDetail = () => {
 
   //  rating start 
   const [rating, setRating] = useState(0)
+  const [write, setWrite]  = useState({
+    name: '',
+    email: '',
+    description: '',
+    ratingPoint:  rating,
+
+  })
   const handleStartClick = (index) => {
-    setRating(index + 1)
+    setRating((prev) => ({
+      ...prev, 
+      rating: index + 1
+    }))
     console.log('rating count:', rating)
   }
   const ratingStar = Array(5).fill(1);
-  const [fileObject, setFileObject] = useState([])
-  const handlefileChange = (e) => {
-    const selectedFile = Array.from(e.target.value);
-    setFileObject(selectedFile)
-    console.log(selectedFile)
+  const handleWriteReview = (e) => {
+    const {name, value} = e.target;
+    setWrite((prevState) => ({
+      ...prevState,
+      [name]: value
+   }))
   }
+const writeReview = (e) => {
+  e.preventDefault()
+  setWrite(write)
+  console.log('review Detail:' , write)
+}
   return (
     <>
       <div>
@@ -94,24 +110,30 @@ const ProductDetail = () => {
                 <div className='para5'>Write Review</div>
                 <RxCross2 className='cross-2' onClick={()=> setReviewBox(false)}/>
               </div>
+              <div className='checkbox-flex mt-1'>
+                <img style={{width: '100px', height: '70px', borderRadius: '5px'}} src={productDetail.img}/>
+                <h2 className='para5'>{productDetail.title}</h2>
+              </div>
               <div className='cartflex-2 mt-2'>
-                <input className='input-width' type='text' placeholder='Enter your name' />
-                <input className='input-width' type='email' placeholder='Enter your email' />
-                <textarea className='review-textarea' placeholder='Write review here'></textarea>
+                <input className='input-width' name ='name' type='text' placeholder='Enter your name' value={write.name} onChange={handleWriteReview} />
+                <input className='input-width' name='email' type='email' placeholder='Enter your email' value={write.email} onChange={handleWriteReview}/>
+                
+                <textarea className='review-textarea'  placeholder='Write review here'  name='description' value={write.description} onChange={handleWriteReview} ></textarea>
+              
                 <div className='star-flex'>
                   <p className='para5'>Give rating:</p>
                   <div className='center'>
                     {ratingStar.map((_, index) => (
-                      <CiStar className={`star-fill ${rating > index ? 'star-fill': 'star-empty' }`} onClick={ () => handleStartClick(index)}/>
+                      <CiStar    className={`star-fill ${rating > index ? 'star-fill': 'star-empty' }`} onClick={ () => handleStartClick(index)}/>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <div className='choose-file'>
-                    <input type='file' multiple onChange={handlefileChange} />
-                  </div>
+                  {/* <div className='choose-file'>
+                    <input type='file' name='image' multiple onChange={handleWriteReview}  />
+                  </div> */}
                   <div className='center  mt-1'>
-                    <button className='btn-width-3'>Submit</button>
+                    <button className='btn-width-3'  onClick={writeReview}>Submit</button>
                   </div>
                 </div>
               </div>

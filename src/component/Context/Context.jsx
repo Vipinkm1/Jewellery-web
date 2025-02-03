@@ -12,6 +12,7 @@ export const  CartProvider = ({children}) => {
   const [cart, setCart] = useState([])
   const [productDetail, setProductDetail] = useState(null)
   const [blogDetail, setBlogDetail] = useState(null)
+  const [rightReview, setRightReview] = useState(null)
 //    add to fuction 
 const addWishlist = (product) => {
     setWishlist([...wishlist, product])
@@ -42,8 +43,12 @@ const ShowDetail = (product)=> {
 const BlogDetail = (item) => {
     setBlogDetail(item)
 }
+
+const onReview = (item) => {
+     setRightReview(item)
+}
 return (
-    <Context.Provider value={{blogDetail, productDetail, wishlist,cart, addWishlist, removeWishlist, getTotalWishlist, addTocart, getTotalCart, removeCart, ShowDetail,BlogDetail}}>
+    <Context.Provider value={{rightReview, blogDetail, productDetail, wishlist,cart, addWishlist, removeWishlist, getTotalWishlist, addTocart, getTotalCart, removeCart, ShowDetail,BlogDetail, onReview}}>
         {children}
     </Context.Provider>
 )

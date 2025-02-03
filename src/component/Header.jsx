@@ -4,7 +4,6 @@ import { VscAccount } from "react-icons/vsc";
 import { VscHeart } from "react-icons/vsc";
 import { BsCart2 } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from './Context/Context';
 import Logo from '../assets/Jewellery/logo.png'
@@ -94,7 +93,6 @@ const Header = () => {
                             )}
                         </div>
                     </div>
-                    <RiArrowDropDownLine className='size-1' />
                 </div>
                 <div className=''>
                     <Link to='/filter' className='para3 anchor line' onClick={() => setMens(true)} onMouseEnter={() => setMens(true)} onMouseLeave={() => setMens(false)}>Men's Jewellery
