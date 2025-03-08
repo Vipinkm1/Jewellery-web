@@ -250,6 +250,7 @@ const FilterPage = () => {
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' }); 
                 navigate('/product-detail');
+                 
               }}
             />
             <CiHeart className='wishlist-icon' onClick={() => handleAddWishlist(product)} />

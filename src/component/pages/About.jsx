@@ -1,6 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+ const navigate = useNavigate()
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = ""; 
+    };
+
+    const handleNavigation = (event) => {
+      const confirmLeave = window.confirm("Do you really want to leave this page?");
+      if (!confirmLeave) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("popstate", handleNavigation);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("popstate", handleNavigation);
+    };
+  }, [navigate]);
   return (
     <div className=' page'>
       <div className='center heading-1'>

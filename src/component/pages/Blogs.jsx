@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { useCart } from '../Context/Context'
@@ -6,8 +6,29 @@ import { useCart } from '../Context/Context'
 
 const Blogs = () => {
   const {BlogDetail} = useCart()
+  const navigate = useNavigate()
 
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = ""; 
+    };
 
+    const handleNavigation = (event) => {
+      const confirmLeave = window.confirm("Do you really want to leave this page?");
+      if (!confirmLeave) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("popstate", handleNavigation);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("popstate", handleNavigation);
+    };
+  }, [navigate]);
   //  show blog detail
 
   const handleBlogDetail = (item) => {
@@ -22,7 +43,7 @@ const Blogs = () => {
     {id: 4, img: 'https://bsmedia.business-standard.com/_media/bs/img/article/2024-10/03/full/1727944211-3529.jpg?im=FeatureCrop,size=(826,465)', hours:'5 Min', title:'Business Standard wishes all its read a very happy new year', createdDate: '01/01/2025', decription: 'Business Standard extends its warmest wishes for a joyous and prosperous New Year to all its readers! May 2025 bring you success, happiness, and endless opportunities!'},
     {id: 5, img: 'https://bsmedia.business-standard.com/_media/bs/img/article/2024-10/02/full/1727890103-1766.jpg?im=FeatureCrop,size=(826,465)', hours:'5 Min', title:'Business Standard wishes all its read a very happy new year' , createdDate: '01/01/2025', decription: 'Business Standard extends its warmest wishes for a joyous and prosperous New Year to all its readers! May 2025 bring you success, happiness, and endless opportunities!'},
   ]
-  const navigate = useNavigate()
+  
    
   return (
     <div className='page'>
