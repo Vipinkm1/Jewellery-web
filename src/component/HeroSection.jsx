@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -30,6 +30,28 @@ const HeroSection = () => {
   const navigate = useNavigate()
   //  change the image
   //  banner 
+
+    useEffect(() => {
+      const handleBeforeUnload = (event) => {
+        event.preventDefault();
+        event.returnValue = ""; 
+      };
+  
+      const handleNavigation = (event) => {
+        const confirmLeave = window.confirm("Do you really want to leave this page?");
+        if (!confirmLeave) {
+          event.preventDefault();
+        }
+      };
+  
+      window.addEventListener("beforeunload", handleBeforeUnload);
+      window.addEventListener("popstate", handleNavigation);
+  
+      return () => {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+        window.removeEventListener("popstate", handleNavigation);
+      };
+    }, [navigate]);
   const sliderSettings = {
     dots: false,
     infinite: true,

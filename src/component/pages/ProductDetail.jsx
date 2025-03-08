@@ -25,8 +25,6 @@ import { CiStar } from "react-icons/ci";
 const ProductDetail = () => {
   //  call the product detail
   const [reviewBox, setReviewBox] = useState(false)
-
-
   const { addWishlist, addTocart, productDetail, rightReview } = useCart()
   const [open, setOpen] = useState(false)
   const [second, setSecond] = useState(false)
@@ -73,33 +71,34 @@ const ProductDetail = () => {
 
   //  rating start 
   const [rating, setRating] = useState(0)
-  const [write, setWrite]  = useState({
+  const [write, setWrite] = useState({
+    title: '',
+    img: '',
     name: '',
     email: '',
     description: '',
-    ratingPoint:  rating,
+    rating: rating
 
   })
   const handleStartClick = (index) => {
-    setRating((prev) => ({
-      ...prev, 
-      rating: index + 1
-    }))
+
+    setRating(index + 1)
     console.log('rating count:', rating)
+    console.log('wirting rating:', write.rating)
   }
   const ratingStar = Array(5).fill(1);
   const handleWriteReview = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setWrite((prevState) => ({
       ...prevState,
       [name]: value
-   }))
+    }))
   }
-const writeReview = (e) => {
-  e.preventDefault()
-  setWrite(write)
-  console.log('review Detail:' , write)
-}
+  const writeReview = (e) => {
+    e.preventDefault()
+    setWrite(write)
+    console.log('review Detail:', write)
+  }
   return (
     <>
       <div>
@@ -108,23 +107,21 @@ const writeReview = (e) => {
             <div className='review-border-1'>
               <div className='title-flex'>
                 <div className='para5'>Write Review</div>
-                <RxCross2 className='cross-2' onClick={()=> setReviewBox(false)}/>
+                <RxCross2 className='cross-2' onClick={() => setReviewBox(false)} />
               </div>
               <div className='checkbox-flex mt-1'>
-                <img style={{width: '100px', height: '70px', borderRadius: '5px'}} src={productDetail.img}/>
-                <h2 className='para5'>{productDetail.title}</h2>
+                <img style={{ width: '100px', height: '70px', borderRadius: '5px' }} src={productDetail.img} value={productDetail.img} name='img' />
+                <h2 className='para5' name='title' value={productDetail.title}>{productDetail.title}</h2>
               </div>
               <div className='cartflex-2 mt-2'>
-                <input className='input-width' name ='name' type='text' placeholder='Enter your name' value={write.name} onChange={handleWriteReview} />
-                <input className='input-width' name='email' type='email' placeholder='Enter your email' value={write.email} onChange={handleWriteReview}/>
-                
-                <textarea className='review-textarea'  placeholder='Write review here'  name='description' value={write.description} onChange={handleWriteReview} ></textarea>
-              
+                <input className='input-width' name='name' type='text' placeholder='Enter your name' value={write.name} onChange={handleWriteReview} />
+                <input className='input-width' name='email' type='email' placeholder='Enter your email' value={write.email} onChange={handleWriteReview} />
+                <textarea className='review-textarea' placeholder='Write review here' name='description' value={write.description} onChange={handleWriteReview} ></textarea>
                 <div className='star-flex'>
                   <p className='para5'>Give rating:</p>
                   <div className='center'>
                     {ratingStar.map((_, index) => (
-                      <CiStar    className={`star-fill ${rating > index ? 'star-fill': 'star-empty' }`} onClick={ () => handleStartClick(index)}/>
+                      <CiStar name='rating' value={index + 1} className={`star-fill ${rating > index ? 'star-fill' : 'star-empty'}`} onClick={() => handleStartClick(index)} />
                     ))}
                   </div>
                 </div>
@@ -133,7 +130,7 @@ const writeReview = (e) => {
                     <input type='file' name='image' multiple onChange={handleWriteReview}  />
                   </div> */}
                   <div className='center  mt-1'>
-                    <button className='btn-width-3'  onClick={writeReview}>Submit</button>
+                    <button className='btn-width-3' onClick={writeReview}>Submit</button>
                   </div>
                 </div>
               </div>
@@ -265,7 +262,7 @@ const writeReview = (e) => {
                 </div>
               </div>
               <div className='cart-flex mt-2'>
-                <button className='btn-width-2' onClick={()=> {window.scrollTo({top: 0, behavior:'smooth'}); navigate('/checkout')}}>BUY PRODUCT</button>
+                <button className='btn-width-2' onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); navigate('/checkout') }}>BUY PRODUCT</button>
                 <button className='btn-width-2'>ADD TO CART</button>
                 <button className='btn-width-2' onClick={() => setReviewBox(true)}>WRITE REVIEW</button>
               </div>

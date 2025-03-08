@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { signupUser } from '../Redux/authSlice';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const {loading , error} = useSelector(state => state.auth)
     const [signup, setSignUp] = useState({
-        fullname: '',
-        username: '',
+        fullName: '',
+        email: '',
         password: '',
-        confirmpassword: '',
         number: ''
 
     })
@@ -17,27 +20,29 @@ const Signup = () => {
         const { name, value } = e.target;
         setSignUp((prevState) => ({
             ...prevState,
-            [name]: value
+            [name]: value || ''
         }))
     }
-    const handleSignUpSubmit = (e) => {
+    const handleSignUpSubmit = async(e) => {
         e.preventDefault()
         const checkEmpty = Object.values(signup).every((field) => field.trim() !== '')
-        if(checkEmpty){
-            setSignUp(signup)
-            localStorage.setItem('signup', JSON.stringify(signup))
-            toast.success('Successfully register account')
-            setTimeout(()=>{
+        if(!checkEmpty){
+            toast.error('All fields are required')
+        }
+        try{
+            const response = await dispatch(signupUser(signup))
+            toast.success("user registered successfully" )
+            setTimeout(() => {
                 navigate('/login')
             }, 2000)
+            
         }
-        else{
-            toast.error('input value is empty')
+        catch (error){
+            toast.error(error.message,"Not Registered")
         }
     }
     const handleLogin = () => {
         navigate('/login')
-        console.log('Login sucessfully')
     }
     
     return (
@@ -47,19 +52,15 @@ const Signup = () => {
                 <form className='form-container' onSubmit={handleSignUpSubmit}>
                     <div>
                         <label className='label-width'>Full Name</label>
-                        <input className='input-width-3' name='fullname' type='text' placeholder='Enter full name' value={signup.fullname} onChange={handleChange} />
+                        <input className='input-width-3' name='fullName' type='text' placeholder='Enter full name' value={signup.fullName} onChange={handleChange} />
                     </div>
                     <div>
-                        <label className='label-width'>Username</label>
-                        <input className='input-width-3' name='username' type='text' placeholder='Enter user name' value={signup.username} onChange={handleChange} />
+                        <label className='label-width'>Email</label>
+                        <input className='input-width-3' name='email' type='text' placeholder='Enter email' value={signup.email} onChange={handleChange} />
                     </div>
                     <div>
                         <label className='label-width'>Password</label>
                         <input className='input-width-3' name='password' type='text' placeholder='Enter passowrd' value={signup.password} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label className='label-width'>Confirm Password</label>
-                        <input className='input-width-3' name='confirmpassword' type='text' placeholder='Enter confirm password' value={signup.confirmpassword} onChange={handleChange} />
                     </div>
                     <div>
                         <label className='label-width'>Mobile Number</label>
