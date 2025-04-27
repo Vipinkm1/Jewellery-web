@@ -81,9 +81,20 @@ const Checkout = () => {
                 <option value=''>Select City</option>
                 {cities.map((items, index) => <option key={index} value={items}>{items}</option>)}
               </select>
+
+            </div>
+            <div className='rating mt-1'>
+              <input  className='input-width-1' type='text' placeholder='First Name'/>
+              <input  className='input-width-1' type='text' placeholder='last Name'/>
+            </div>
+            <div className='rating mt-1'>
+              <input  className='input-width-1' type='text' placeholder='Enter full address'/>
+              <input  className='input-width-1' type='number' placeholder='pin number'/>
             </div>
           </div>
         </div>
+
+        {/*  here we add the payment methode rajorpay */}
         <div className='cart-container-1'>
           <h2 className='center font'>Checkout</h2>
         </div>
